@@ -85,7 +85,12 @@ results_pc_r1 <- results_r1 %>%
            fill = list(resp = 0)) %>%
   mutate(total = 16,
          prop = round(resp/total,2)) %>%
-  filter(!(is.na(covariate) & resp ==0))
+  filter(!(is.na(covariate) & resp ==0)) %>%
+  mutate(metric = case_when(metric == "surv"~"Survival",
+                            metric == "rout"~"Routing",
+                            metric == "time"~"TravelTime",
+                            TRUE~metric),
+         metric = factor(metric, levels = c("Survival", "Routing","TravelTime"))) 
 
 results_pc_r1_conf <- results_r1 %>%
   filter(conf != "Low") %>%
@@ -100,7 +105,7 @@ results_pc_r1_conf <- results_r1 %>%
            fill = list(resp = 0)) %>%
   mutate(prop = round(resp/total,2),
          prop = replace(prop, is.na(prop), 0)) %>%
-  filter(!(is.na(covariate) & resp ==0))
+  filter(!(is.na(covariate) & resp ==0)) 
 ```
 
 
@@ -108,32 +113,20 @@ results_pc_r1_conf <- results_r1 %>%
 
 ![STARS regions](stars_regions.png)
 
-
-
-## Survival Covariates
+## Region 1 Covariates
 
 ```{r , fig.cap = "Survival Results"}
-ggplot(results_pc_r1 %>% filter(metric == "surv")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
+ggplot(results_pc_r1 %>% filter(region == 1)) + 
+  geom_col(aes(metric, resp, fill = covariate), color = "black") +
   scale_fill_viridis(discrete = T, option = "plasma", direction = -1) +
   theme_bw()
 ```
-
-```{r , include = FALSE}
-ggplot(results_pc_r1_conf %>% filter(metric == "surv")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
-  scale_fill_viridis(discrete = T, option = "plasma", direction = -1) +
-  theme_bw()
-```
-
--   Reached 100% consensus on Region 1 survival
--   Split for the remaining regions
 
 ```{r}
-kable(results_pc_r1 %>% filter(metric == "surv") %>% select(region, covariate, prop, med_conf),
+kable(results_pc_r1 %>% filter(region == 1) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
       label = NA,
       vline = "",
-      caption = "Covariates for Survival by Region",
+      caption = "Covariates for Region 1 by Metric",
       valign = "t") %>%
   kable_classic(html_font = "Cambria") %>%
       row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>%
@@ -141,43 +134,108 @@ kable(results_pc_r1 %>% filter(metric == "surv") %>% select(region, covariate, p
     kable_styling(full_width = F) 
 ```
 
+-   Reached 100% consensus for all metrics
+
 ### Rationale
 
-#### Region 1
+#### Survival
+
+#### Routing
+
+#### Travel Time
 
 
-##### Vernalis Flow
+## Region 2 Covariates
 
-##### OMR
+```{r, fig.cap = "Routing Results"}
+ggplot(results_pc_r1 %>% filter(region == 2)) + 
+  geom_col(aes(metric, resp, fill = covariate), color = "black") +
+  scale_fill_viridis(discrete = T, option = "mako", direction = -1) +
+  theme_bw()
+```
 
-##### CVP/SWP Exports
+```{r}
+kable(results_pc_r1 %>% filter(region == 2) %>% select(metric, covariate, prop, med_conf) %>%arrange(metric),
+      label = NA,
+      vline = "",
+      caption = "Covariates for Region 2",
+      valign = "t") %>%
+    kable_classic(html_font = "Cambria") %>%
+      row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>% kable_styling(full_width = F) %>%
+  row_spec(row = 0, bold = TRUE) 
 
-#### Region 2
+```
 
-##### Vernalis Flow
+### Rationale
 
-##### OMR
+#### Survival
 
-##### CVP/SWP Exports
+#### Routing
 
-#### Region 3
+#### Travel Time
 
-##### Vernalis Flow
+## Region 3 Covariates
 
-##### OMR
+```{r , fig.cap = "Region 3 Results"}
+ggplot(results_pc_r1 %>% filter(region == 3)) + 
+  geom_col(aes(metric, resp, fill = covariate), color = "black") +
+  scale_fill_viridis(discrete = T, option = "turbo", direction = -1) +
+  theme_bw()
+```
 
-##### CVP/SWP Exports
 
-#### Region 4
+```{r}
+kable(results_pc_r1 %>% filter(region == 3) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
+      label = NA,
+      vline = "",
+      caption = "Covariates for Region 3",
+      valign = "t") %>%
+  kable_styling(full_width = F) %>%
+  kable_classic(html_font = "Cambria") %>%
+      row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>%
+  row_spec(row = 0, bold = TRUE) 
+```
+### Rationale
 
-##### Vernalis Flow
+#### Survival
 
-##### OMR
+#### Routing
 
-##### CVP/SWP Exports
+#### Travel Time
 
-### References
+## Region 4 Covariates
 
+```{r , fig.cap = "Region 4 Results"}
+ggplot(results_pc_r1 %>% filter(region == 4)) + 
+  geom_col(aes(metric, resp, fill = covariate), color = "black") +
+  scale_fill_viridis(discrete = T, option = "magma", direction = -1) +
+  theme_bw()
+```
+### Rationale
+
+#### Survival
+
+#### Routing
+
+#### Travel Time
+
+
+```{r}
+kable(results_pc_r1 %>% filter(region == 4) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
+      label = NA,
+      vline = "",
+      caption = "Covariates for Region 4",
+      valign = "t") %>%
+  kable_styling(full_width = F) %>%
+  kable_classic(html_font = "Cambria") %>%
+      row_spec(c(3,7,10),extra_css = "border-bottom: 1px solid;") %>%
+  row_spec(row = 0, bold = TRUE) 
+```
+
+
+## Resources
+
+- A Shiny app is available that would allow others in the group to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions. Many participants may not be familiar with these data.
 - Perry et al. 2018
 - Buchanan et al. 2021
 - Pope et al. 2025
@@ -191,74 +249,6 @@ kable(results_pc_r1 %>% filter(metric == "surv") %>% select(region, covariate, p
 
 - 2024 CAMT Salmon Technical Working Group Final Report "a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta"; Buchanan steelhead routing presentation June 2025; Buchanan et al. 2021; Pope et al. 2025; Buchanan and Whitlock 2022
 Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis
-
-
-## Routing Covariates
-
-```{r, fig.cap = "Routing Results"}
-ggplot(results_pc_r1 %>% filter(metric == "rout")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
-  scale_fill_viridis(discrete = T, option = "mako", direction = -1) +
-  theme_bw()
-```
-
-- Reached consensus on Region 1 routing
-
-```{r, include = FALSE, fig.cap = "Routing Results (filtered out Low Confidence)"}
-ggplot(results_pc_r1_conf %>% filter(metric == "rout")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
-  scale_fill_viridis(discrete = T, option = "mako", direction = -1) +
-  theme_bw()
-```
-
-```{r}
-kable(results_pc_r1 %>% filter(metric == "rout") %>% select(region, covariate, prop, med_conf),
-      label = NA,
-      vline = "",
-      caption = "Covariates for Routing by Region",
-      valign = "t") %>%
-    kable_classic(html_font = "Cambria") %>%
-      row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>% kable_styling(full_width = F) %>%
-  row_spec(row = 0, bold = TRUE) 
-
-```
-
-## Travel Time Covariates
-
-```{r , fig.cap = "Travel Time Results"}
-ggplot(results_pc_r1 %>% filter(metric == "time")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
-  scale_fill_viridis(discrete = T, option = "turbo", direction = -1) +
-  theme_bw()
-```
-
-- Reached consensus on Region 1 and Region 4 travel time 
-
-
-```{r ,include = FALSE}
-ggplot(results_pc_r1_conf %>% filter(metric == "time")) + 
-  geom_col(aes(region, resp, fill = covariate), color = "black") +
-  scale_fill_viridis(discrete = T, option = "turbo", direction = -1) +
-  theme_bw()
-```
-
-```{r}
-kable(results_pc_r1 %>% filter(metric == "time") %>% select(region, covariate, prop, med_conf),
-      label = NA,
-      vline = "",
-      caption = "Covariates for Travel Time by Region",
-      valign = "t") %>%
-  kable_styling(full_width = F) %>%
-  kable_classic(html_font = "Cambria") %>%
-      row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>%
-  row_spec(row = 0, bold = TRUE) 
-```
-
-
-
-## Resources
-
-- A Shiny app is available that would allow others in the group to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions. Many participants may not be familiar with these data.
 
 
 ## Topics to be discussed 
