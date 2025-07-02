@@ -134,7 +134,7 @@ kable(results_pc_r1 %>% filter(region == 1) %>% select(metric, covariate, prop, 
     kable_styling(full_width = F) 
 ```
 
--   Reached 100% consensus for all metrics
+-   Reached consensus for all metrics
 
 ### Rationale
 
@@ -166,6 +166,8 @@ kable(results_pc_r1 %>% filter(region == 2) %>% select(metric, covariate, prop, 
 
 ```
 
+- Did not reach consensus on any metrics 
+
 ### Rationale
 
 #### Survival
@@ -195,6 +197,8 @@ kable(results_pc_r1 %>% filter(region == 3) %>% select(metric, covariate, prop, 
       row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>%
   row_spec(row = 0, bold = TRUE) 
 ```
+
+- No consensus for any metrics
 ### Rationale
 
 #### Survival
@@ -232,6 +236,7 @@ kable(results_pc_r1 %>% filter(region == 4) %>% select(metric, covariate, prop, 
   row_spec(row = 0, bold = TRUE) 
 ```
 
+- Reached consensus for Travel Time
 
 ## Resources
 
