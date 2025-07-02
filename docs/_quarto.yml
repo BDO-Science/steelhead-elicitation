@@ -1,5 +1,5 @@
-theme: jekyll-
-projecttheme-cayman:
+theme: jekyll-theme-cayman
+project:
   title: "Steelhead STARS Elicitation"
 
 editor: visual
