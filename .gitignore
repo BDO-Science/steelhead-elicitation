@@ -40,10 +40,17 @@ vignettes/*.pdf
 .Renviron
 
 # pkgdown site
-docs/
+
 
 # translation temp files
 po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+/.quarto/
+
+# responses
+docs/Steelhead STARS Elicitation Round 1.csv
+round1_comments.csv
+round1_clean.csv
