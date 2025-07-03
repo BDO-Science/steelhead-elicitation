@@ -130,8 +130,9 @@ results_pc_r1_conf <- results_r1 %>%
 ggplot(results_pc_r1 %>% filter(region == 1)) + 
   geom_col(aes(metric, resp, fill = covariate), color = "black") +
   scale_fill_viridis(discrete = T, option = "plasma", direction = -1) +
-  theme_bw()+ 
-  theme(axis.text = element_text(size = 12), axis.title = element_text(size = 13), legend.text = element_text(size = 12), legend.title = element_text(size = 13))
+  labs(y = "Number of Responses")+
+  theme_bw()+
+  theme(axis.text = element_text(size = 14), axis.title = element_text(size = 14), legend.text = element_text(size = 14), legend.title = element_text(size = 14))
 ```
 
 ```{r}
@@ -267,8 +268,9 @@ Agreement that higher **Vernalis** flow leads to shorter travel times. Increased
 ggplot(results_pc_r1 %>% filter(region == 2)) + 
   geom_col(aes(metric, resp, fill = covariate), color = "black") +
   scale_fill_viridis(discrete = T, option = "mako", direction = -1) +
+  labs(y = "Number of Responses")+
   theme_bw()+ 
-  theme(axis.text = element_text(size = 12), axis.title = element_text(size = 13), legend.text = element_text(size = 12), legend.title = element_text(size = 13))
+  theme(axis.text = element_text(size = 14), axis.title = element_text(size = 14), legend.text = element_text(size = 14), legend.title = element_text(size = 14))
 ```
 
 ```{r}
@@ -414,8 +416,9 @@ Based on Fig 5 Panels D-F of Pope et al 2025, OMR seems to be more explanatory (
 ggplot(results_pc_r1 %>% filter(region == 3)) + 
   geom_col(aes(metric, resp, fill = covariate), color = "black") +
   scale_fill_viridis(discrete = T, option = "turbo", direction = -1) +
-  theme_bw() + 
-  theme(axis.text = element_text(size = 12), axis.title = element_text(size = 13), legend.text = element_text(size = 12), legend.title = element_text(size = 13))
+  labs(y = "Number of Responses")+
+  theme_bw()+ 
+  theme(axis.text = element_text(size = 14), axis.title = element_text(size=14), legend.text = element_text(size = 14), legend.title = element_text(size = 14))
 ```
 
 
@@ -550,8 +553,9 @@ Participants expressed high degree of uncertainty, with selections split between
 ggplot(results_pc_r1 %>% filter(region == 4)) + 
   geom_col(aes(metric, resp, fill = covariate), color = "black") +
   scale_fill_viridis(discrete = T, option = "magma", direction = -1) +
+  labs(y = "Number of Responses")+
   theme_bw()+ 
-  theme(axis.text = element_text(size = 12), axis.title = element_text(size = 13), legend.text = element_text(size = 12), legend.title = element_text(size = 13))
+  theme(axis.text = element_text(size = 14), axis.title = element_text(size =14), legend.text = element_text(size = 14), legend.title = element_text(size = 14))
 ```
 
 ```{r}
