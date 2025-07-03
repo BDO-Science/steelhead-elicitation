@@ -703,11 +703,16 @@ OMR strongest association.
 **Note:** If and when the final version of the model is posted online, we will ensure that the proper caveats are noted. This includes whether or not the output is indicating results/predictions for “barrier in” versus “barrier out”, and per the Pope et al. (2025) manuscript, that the findings are generally applicable to the range of environmental and operational conditions observed during the 2011–2016 study period. 
 
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
+
 - Tidal flow should be considered as the primary covariate for region 3
   - Daily timestep makes tidal flow less useful as a metric. *[Address timestep of this model]*
+  
 - Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).
+
 - Covariates should be ranked primarily on their mechanistic basis and the strength of that physical effect in the region of interest. For example, if the expected effect of exports is altered hydrodynamics, exports should not be considered as a covariate in regions where exports do appreciably change hydrodynamic conditions experienced and perceived by fish. Should be an option to have none of these three environmental covariates in regions where none of a clear, strong mechanistic effect.
+
 - All responses are within the context of "modern" operations post-2009 under the conditions observed in literature cited. I am uncertain of what the primary covariate would be if operations were significantly changed during juvenile salmonid outmigration period. There are many factors, if significantly modified may impact survival and routing-- installation of barriers, habitat restoration improvements to facilities, significant increases or decreases of pumping rates, predator control measures, changes to trucking and release operations. For example, if water exports were always at maximum capacity or significantly more negative than -5,000 OMR Index, exports and OMR more likely to influence routing than under modern conditions. Exports and OMR could become increasingly more of important covariate on survival in those regions that are close in proximity to export facilities. I'm uncertain if it would be more of negative impact on survival or positive impact on survival. Under poor conditions, perhaps it would increase survival by through the salvage operations, fish would get a free ride to a better environment like we have seen in some chinook salmon studies. However, the salvage operations are most efficient at a specific rate--not too fast and not too slow. 
+
 - Probably more relevant for chinook: My hypothesis that the salvage operations route probably increases survival of fry-size chinook during wet years. We observe a lot of fry-size chinook in salvage during wet years. Most of salmonid observations for these routing and survival studies are based on smolt-sized fish that are large enough to be acoustically tagged.
 
 ### Concerns
@@ -718,7 +723,7 @@ OMR strongest association.
 
 [Resources Folder](https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources)
 
-- A Shiny app is available that would allow others in the group to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions. Many participants may not be familiar with these data.
+- [A Shiny app to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.](https://fishsciences.shinyapps.io/delta-hydrodynamics/)
 - Buchanan 2024
 - Buchanan steelhead routing presentation June 2025
 - Buchanan et al. 2021
