@@ -6,7 +6,6 @@ format:
     toc-depth: 4
     toc-expand: 2
     html-math-method: katex
-    css: styles.css
 ---
 
 ```{r setup, include = FALSE}
@@ -139,7 +138,7 @@ ggplot(results_pc_r1 %>% filter(region == 1)) +
 kable(results_pc_r1 %>% filter(region == 1) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
       label = NA,
       vline = "",
-      caption = "Covariates for Region 1 by Metric",
+      caption = "Covariates and Confidence for Region 1 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
   kable_classic(html_font = "Cambria") %>%
       row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>%
@@ -277,7 +276,7 @@ ggplot(results_pc_r1 %>% filter(region == 2)) +
 kable(results_pc_r1 %>% filter(region == 2) %>% select(metric, covariate, prop, med_conf) %>%arrange(metric),
       label = NA,
       vline = "",
-      caption = "Covariates for Region 2",
+      caption = "Covariates and Confidence for Region 2 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
     kable_classic(html_font = "Cambria") %>%
       row_spec(c(3,6,9),extra_css = "border-bottom: 1px solid;") %>% kable_styling(full_width = F) %>%
@@ -426,7 +425,7 @@ ggplot(results_pc_r1 %>% filter(region == 3)) +
 kable(results_pc_r1 %>% filter(region == 3) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
       label = NA,
       vline = "",
-      caption = "Covariates for Region 3",
+      caption = "Covariates and Confidence for Region 3 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
   kable_styling(full_width = F) %>%
   kable_classic(html_font = "Cambria") %>%
@@ -562,7 +561,7 @@ ggplot(results_pc_r1 %>% filter(region == 4)) +
 kable(results_pc_r1 %>% filter(region == 4) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
       label = NA,
       vline = "",
-      caption = "Covariates for Region 4",
+      caption = "Covariates and Confidence for Region 4 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
   kable_styling(full_width = F) %>%
   kable_classic(html_font = "Cambria") %>%
