@@ -700,7 +700,7 @@ OMR strongest association.
 
 ### Caveats/Suggestions
 
-**Note:** If and when the final version of the model is posted online, we will ensure that the proper caveats are noted. This include whether or not the output is indicating results/predictions for “barrier in” versus “barrier out”, and per the Pope et al. (2025) manuscript, that the findings are generally applicable to the range of environmental and operational conditions observed during the 2011–2016 study period. 
+**Note:** If and when the final version of the model is posted online, we will ensure that the proper caveats are noted. This includes whether or not the output is indicating results/predictions for “barrier in” versus “barrier out”, and per the Pope et al. (2025) manuscript, that the findings are generally applicable to the range of environmental and operational conditions observed during the 2011–2016 study period. 
 
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
 - Tidal flow should be considered as the primary covariate for region 3
@@ -716,19 +716,22 @@ OMR strongest association.
 
 ## Resources
 
-- A Shiny app is available that would allow others in the group to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions. Many participants may not be familiar with these data.
-- Perry et al. 2018
-- Buchanan et al. 2021
-- Pope et al. 2025
-- Buchanan and Whitlock (2022): temperature was better supported than Delta inflow for FR Chinook; correlation between temperature and flow
-- Cavallo et al. 2015
-- Buchanan, R.A., Skalski, J.R. Relating survival of fall-run Chinook Salmon through the San Joaquin Delta to river flow. 
-- Hydrodynamics minimally affected by exports and OMR (Cavallo et al. 2013, Cavallo, B., P. Gaskill and J. Melgo 2013, Cramer report 
-- USFWS reports 2021, 2022, 2024; 2025)
-- South Delta steelhead survival studies (Matthias et al.) - 2011
-- Buchanan 2024
+[Resources Folder](https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources)
 
-- 2024 CAMT Salmon Technical Working Group Final Report "a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta"; Buchanan steelhead routing presentation June 2025; Buchanan et al. 2021; Pope et al. 2025; Buchanan and Whitlock 2022
-Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis
+- A Shiny app is available that would allow others in the group to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions. Many participants may not be familiar with these data.
+- Buchanan 2024
+- Buchanan steelhead routing presentation June 2025
+- Buchanan et al. 2021
+- Buchanan and Skalski 2019
+- Buchanan and Whitlock 2022
+- Cavallo et al. 2013
+- Cavallo et al. 2015
+- Cramer report 
+- Dodrill et al. 2022
+- Perry et al. 2018
+- Pope et al. 2025
+- USFWS South Delta Steelhead Survival Study Reports 2021, 2022, 2024
+- Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis
+- 2024 CAMT Salmon Technical Working Group Final Report "a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta"
 
 
