@@ -148,11 +148,11 @@ kable(results_pc_r1 %>% filter(region == 1) %>% select(metric, covariate, prop, 
 
 ### Summary
 
-Near-unanimous consensus among experts that Vernalis flow is the primary driver for all three metric (survival, routing, and travel time) 
+Near-unanimous consensus among experts that Vernalis flow is the primary driver for all three metrics (survival, routing, and travel time).
 
 #### Survival
 
-General agreement that higher Vernalis flow is directly correlated with higher survival rates. This was attributed to a combination of factors including improved water quality (e.g., lower temperatures), reduced predation risk due to faster transit, and the minimal hydrodynamic influence of south Delta exports in this region. 
+General agreement that higher Vernalis flow is directly correlated with higher survival rates. This was attributed to a combination of factors, including improved water quality (e.g., lower temperatures), reduced predation risk due to faster transit, and the minimal hydrodynamic influence of south Delta exports in this region. 
 
 ##### Rationales
 
@@ -230,7 +230,7 @@ I haven't looked as close with Turner cut, but I would assume OMR flows would pr
 
 #### Travel Time
 
-Agreement that higher **Vernalis** flow leads to shorter travel times. Increased flow should result in higher water velocity, allowing fish to move through the region more quickly and reducing their overall exposure to various sources of mortality.
+Agreement that higher Vernalis flow leads to shorter travel times. Increased flow should result in higher water velocity, allowing fish to move through the region more quickly and reducing their overall exposure to various sources of mortality.
 
 ##### Rationales
 
@@ -240,7 +240,7 @@ Agreement that higher **Vernalis** flow leads to shorter travel times. Increased
 
 - Vernalis (based on Fig 4 Panels D-F of Pope et al 2025), but OMR and Exports look very similar though slightly less steep.
 
-- See previous responses for this region.
+- See previous responses for this region. [SJR flow strongly influences hydrodynamic conditions experienced by juvenile steelhead in most of this region.  In contrast, export effects on hydrodynamics are very weak in this region. OMR flows integrate exports and Vernalis flows.  Since export effects are weak in this region while SJR flow effects are strong, there is no advantage to using OMR flows over SJR flows (Vernalis Flow).  Lastly, this finding has been affirmed by prior analyses.]
 
 - The higher the flows, the faster fish will be able to move through here. Although it should be noted that this area does experience reverse flows when Vernalis flows are low and exports are high. Even when this happens, Vernalis flows are still going to be low and this effect should be adequately captured when using Vernalis flow as the covariate.
 
@@ -296,7 +296,7 @@ Opinion was split between OMR flow, Vernalis flow, and CVP + SWP Exports. The ch
 
 **Vernalis Flow**
 
-- When the Head of Old River Barrier is NOT in place, SJR flow strongly influences hydrodynamic conditions experienced by juvenile steelhead in the Old River/GLC region. Exports influence entertainment risk for fish that reach the SWP and CVP intakes, but don't influence hydrodynamics as broadly as SJR inflows do. OMR is measured in the OMR corridor and so is more relevant to Region 4. In general, covariates in Region 2 are difficult because the routing/fate of fish reaching the CVP/SWP area is poorly distinguished by receiver arrays and by the existing analysis. Positive OMR flows typically occur when exports are highest, and negative OMR flows occur when exports are relatively low. With entertainment contributing to through-Delta survival, OMR flows are likely to yield counter-intuitive results regarding survival (because how fish survive is not defined in the analysis).
+- When the Head of Old River Barrier is NOT in place, SJR flow strongly influences hydrodynamic conditions experienced by juvenile steelhead in the Old River/GLC region. Exports influence entrainment risk for fish that reach the SWP and CVP intakes, but don't influence hydrodynamics as broadly as SJR inflows do. OMR is measured in the OMR corridor and so is more relevant to Region 4. In general, covariates in Region 2 are difficult because the routing/fate of fish reaching the CVP/SWP area is poorly distinguished by receiver arrays and by the existing analysis. Positive OMR flows typically occur when exports are highest, and negative OMR flows occur when exports are relatively low. With entrainment contributing to through-Delta survival, OMR flows are likely to yield counter-intuitive results regarding survival (because how fish survive is not defined in the analysis).
 
 - OMR and exports have more of an influence on this region in comparison to other regions, however flow is going to have a larger impact. Pope et al. 2025 found that "overall survival appears more strongly associated with OMR flows and Vernalis flows, increasing as these flows increased". I selected Vernalis flows over OMR since Vernalis flows have a strong influence on OMR. Pope et al 2025 "overall survival in the region was not strongly associated with exports". Also, higher flows likely to associated with cooler water temperatures that may reduce predation rates.
 
@@ -308,7 +308,7 @@ Opinion was split between OMR flow, Vernalis flow, and CVP + SWP Exports. The ch
 
 - NOTE: Votes for Vernalis and OMR, based on Fig 5 Panels A-C of Pope et al 2025. Within green range (more typical Vernalis flows), Vernalis may be slightly more explanatory.
 
-- Salvage at both the CVP and SWP export facilities has been determined either directly by the volume of combined exports or by local hydrodynamic conditions strongly influenced by exports (e.g., OMR flow);
+- Salvage at both the CVP and SWP export facilities has been determined either directly by the volume of combined exports or by local hydrodynamic conditions strongly influenced by exports (e.g., OMR flow)
 
 - Overall, I expect survival to be higher with higher Vernalis flows (Buchanan reports/publications and recent Matthias et al. South Delta reports). Looking at 2011, we saw the highest survival and lower survival during critical and dry water years (2012-2016). Vernalis flows are also correlated with water temperatures (higher flows are often associated with lower temperatures and, again, higher survival). Vernalis flows are also associated with lower travel time, so smolts are able to move faster through this reach, thus reducing exposure to predators. However, some of Buchanan's work also shows higher survival associated with higher exports, especially at low Vernalis flows (especially for Chinook) because fish were entrained into the pumps and transported around the Delta. This can be extremely important during dry and critical water years because survival without the HORB can be very low (look at Matthias et al. reports). In order to capture some of these dynamics and looking at Adam's results, it looks like OMR flows might be more appropriate to use than just Vernalis flow or Exports. OMR represents an interaction between Vernalis flows and exports due to management constraints (e.g., the pumps are limited by Delta inflow). Therfore, OMR flows represent a strange interaction between Vernalis flows and exports and should better encompass the most extreme dynamics better than the other variables.
 
@@ -339,7 +339,7 @@ Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The di
 
 - Buchanan 2024
 
-- Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?
+- **Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?**
 
 
 **OMR**
@@ -358,9 +358,9 @@ Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The di
 
 **CVP + SWP Exports**
 
-- This was a gut feeling that once in the region exports would have more of an association that the other two covariates. I think Pope et al. (2025) also suggests exports can influence routing.
+- This was a gut feeling that once in the region exports would have more of an association than the other two covariates. I think Pope et al. (2025) also suggests exports can influence routing.
 
-- Strongest, broadest hydrodynamic influence in Region 2. See previous response. Exports influence routing (entertainment at CVP/SWP) but this routing is not represented in the current model.
+- Strongest, broadest hydrodynamic influence in Region 2. See previous response. Exports influence routing (entrainment at CVP/SWP) but this routing is not represented in the current model.
 
 - Salvage at both the CVP and SWP export facilities has been determined either directly by the volume of combined exports or by local hydrodynamic conditions strongly influenced by exports (e.g., OMR flow).
 
@@ -478,13 +478,15 @@ Opinion was split for both survival and routing, with OMR flow holding a slight 
 
 #### Routing
 
+*See Survival section above for summary*
+
 ##### Rationales
 
 **Vernalis Flow**
 
 - This region is strongly tidal. None of these covariates have a mechanistic basis for meaningfully influencing route selection.
 
-- Given the distance from both Varnalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player. Also, I am not entirely sure what routing option we are looking at (taking 3-Mile Slough vs. Jersey Point to Chipps?
+- Given the distance from both Vernalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player. Also, I am not entirely sure what routing option we are looking at (taking 3-Mile Slough vs. Jersey Point to Chipps?)
 
 - Do not think these covariates explain routing. Tides; poor correlations. Buchanan 2024
 
@@ -528,9 +530,9 @@ Participants expressed high degree of uncertainty, with selections split between
 
 - All similar and choice probably doesn’t matter. Does it make sense to choose the option with the smallest CI? Though CIs are similar too. Maybe makes sense to pick the covariate used for survival and routing for consistency – that may be OMR
 
-- See previous responses for this region.
+- See previous responses for this region. [This region is strongly tidal.  None of these covariates have a mechanistic basis for meaningfully influencing route selection.]
 
-- Given the distance from both Varnalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player.
+- Given the distance from both Vernalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player.
 
 - The effects of all variable in Pope et al. 2025 are flat. But if I am forced to chose one, it would be the one that captures both effects.
 
@@ -619,7 +621,7 @@ For both metrics, OMR was the favored choice for most participants. The primary 
 
 - Unsure, What is the bright green Turner Cut routing in Fig 8, is this meant to fall under region 4?
 
-- See previous response for this region.
+- See previous response for this region [OMR is calculated from channels within the center of Region 4, and is therefore most geographically relevant.  That said, there is little reason to expected a tidally-averaged flow metric like OMR is perceived by or very relevant to steelhead smolts.   Exports would probably be a better covariate if fish that were entrained vs. fish migrating volitionally were distinguished in the model.]
 
 - PTM simulations show the risk of entrainment increases considerably with increasing CVP and SWP exports, as represented by net OMR flows (NMFS 2009). Thus, the risk of juvenile salmonid entrainment into the south Delta channels is increased when OMR flows become more negative (NMFS 2009).
 
@@ -635,7 +637,7 @@ For both metrics, OMR was the favored choice for most participants. The primary 
 
 - Much like survival I think this may be more correlated to the OMR 'cycles' with larger swings in OMR 'trapping' fish within this region.
 
-- Same as above.
+- Same as above. [Similar to the above, Buchanan & Skalski (2020) suggest that variables affecting survival in the different regions of the Delta differ by region, with a transformed flow metrics of OMR affecting survival the most in this region.]
 
 - Exports change the hydrodynamics in this region.
 
@@ -647,7 +649,7 @@ For both metrics, OMR was the favored choice for most participants. The primary 
 
 #### Travel Time
 
-(See Routing for summary)
+(See Routing section above for summary)
 
 ##### Rationales
 
@@ -659,7 +661,7 @@ For both metrics, OMR was the favored choice for most participants. The primary 
 Why does travel time increase so much with positive OMR?
 OMR strongest association.
 
-- See previous responses for this region.
+- See previous responses for this region. [OMR is calculated from channels within the center of Region 4, and is therefore most geographically relevant.  That said, there is little reason to expected a tidally-averaged flow metric like OMR is perceived by or very relevant to steelhead smolts. Exports would probably be a better covariate if fish that were entrained vs. fish migrating volitionally were distinguished in the model.]
 
 - This region has the most complex interactions between exports and Delta inflow. Water diverted from the Sacramento River often flows through the interior Delta (e.g., region 4), causing reverse flows along the OMR corridor. Given the three covariates of choice and the complex interaction between Delta inflow (from both the Sacramento and San Joaquin Rivers) and exports, this seems like the most likely covariate to capture some of the dynamics influencing travel time.
 
@@ -675,7 +677,7 @@ OMR strongest association.
 
 - I think travel time would be correlated to the size of the zone of influence (and probably the route which they entered this region) which is driven by OMR and the magnitude of changes in OMR with large fluctuations keeping fish in a 'seiche' and unable to escape this region.
 
-- Same as above.
+- Same as above. [Similar to the above, Buchanan & Skalski (2020) suggest that variables affecting survival in the different regions of the Delta differ by region, with a transformed flow metrics of OMR affecting survival the most in this region.]
 
 **CVP & SWP Exports**
 
@@ -685,21 +687,26 @@ OMR strongest association.
 
 ### Questions
 
-- On what basis should we determine "primary covariate"?
+- **On what basis should we determine "primary covariate"?**
   - When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by: 
     - A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect). 
     - The strongest statistical correlation with the parameter. 
     - The overall logical fit for the specific region in question. 
   - Note that the potential predictors (OMR, Vernalis flow, and Exports) are highly collinear. Therefore, this exercise is not expected to significantly alter the model's overall performance. The primary goal is to construct a final, more defensible model that incorporates the predictor that makes the most sense for each region. 
   
-- (Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? 
+- **(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? **
 
-- There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e. <5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? 
+- **There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e. <5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? **
 
 
 ### Caveats/Suggestions
 
-**Note:** If and when the final version of the model is posted online, we will ensure that the proper caveats are noted. This includes whether or not the output is indicating results/predictions for “barrier in” versus “barrier out”, and per the Pope et al. (2025) manuscript, that the findings are generally applicable to the range of environmental and operational conditions observed during the 2011–2016 study period. 
+---
+
+**Note** 
+If and when the final version of the model is posted online, we will ensure that the proper caveats are noted. This includes whether or not the output is indicating results/predictions for “barrier in” versus “barrier out”, and per the Pope et al. (2025) manuscript, that the findings are generally applicable to the range of environmental and operational conditions observed during the 2011–2016 study period. 
+
+---
 
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
 
@@ -723,6 +730,9 @@ OMR strongest association.
 [Resources Folder](https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources)
 
 - [A Shiny app to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.](https://fishsciences.shinyapps.io/delta-hydrodynamics/)
+  - Accompanying graphics in DSM2 Hydro Simulations
+- Anchor QEA 2022
+- Attachment 6 LTO Salmon EA
 - Buchanan 2024
 - Buchanan steelhead routing presentation June 2025
 - Buchanan et al. 2021
@@ -730,12 +740,13 @@ OMR strongest association.
 - Buchanan and Whitlock 2022
 - Cavallo et al. 2013
 - Cavallo et al. 2015
-- Cramer report 
+- Cramer report 2013
 - Dodrill et al. 2022
 - Perry et al. 2018
 - Pope et al. 2025
 - USFWS South Delta Steelhead Survival Study Reports 2021, 2022, 2024
 - Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis
 - 2024 CAMT Salmon Technical Working Group Final Report "a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta"
+- Wohner et al. 2022
 
 
