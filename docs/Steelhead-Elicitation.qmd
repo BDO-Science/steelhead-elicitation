@@ -146,15 +146,19 @@ kable(results_pc_r1 %>% filter(region == 1) %>% select(metric, covariate, prop, 
     kable_styling(full_width = F) 
 ```
 
-### Summary
+### Explanations
+
+#### Summary
 
 Near-unanimous consensus among experts that Vernalis flow is the primary driver for all three metrics (survival, routing, and travel time).
 
-#### Survival
+---
+
+#### Rationales 
+
+##### Survival
 
 General agreement that higher Vernalis flow is directly correlated with higher survival rates. This was attributed to a combination of factors, including improved water quality (e.g., lower temperatures), reduced predation risk due to faster transit, and the minimal hydrodynamic influence of south Delta exports in this region. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -188,12 +192,11 @@ General agreement that higher Vernalis flow is directly correlated with higher s
 
 - The 6 Year and VAMP studies show a positive relationship between Vernalis flow and salmonid survival in reach 1.
 
+---
 
-#### Routing
+##### Routing
 
 Majority of participants identified Vernalis flow as the key factor determining whether fish stay in the mainstem San Joaquin River or drawn into the interior Delta at the Head of Old River (note that one participant selected OMR). The purported mechanism was that higher flows create stronger downstream currents that keep fish on their primary migratory path. The Head of Old River Barrier (HORB) is acknowledged as a dominant factor when it’s present, but Vernalis flow is considered the key hydrodynamic driver when the barrier is not in place. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -228,11 +231,11 @@ I haven't looked as close with Turner cut, but I would assume OMR flows would pr
 
 - The analysis of this region in Pope et al. (2025) found a strong effect of OMR regardless of HOR barrier status
 
-#### Travel Time
+---
+
+##### Travel Time
 
 Agreement that higher Vernalis flow leads to shorter travel times. Increased flow should result in higher water velocity, allowing fish to move through the region more quickly and reducing their overall exposure to various sources of mortality.
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -259,6 +262,8 @@ Agreement that higher Vernalis flow leads to shorter travel times. Increased flo
 
 - Higher vernalis flows should result in lower travel times in this reach.
 
+---
+
 ## Region 2 (Old and Middle River Corridors, Downstream) Covariates
 
 ### Covariate Selection
@@ -284,15 +289,19 @@ kable(results_pc_r1 %>% filter(region == 2) %>% select(metric, covariate, prop, 
 
 ```
 
-### Summary
+### Explanations
+
+#### Summary
 
 Disagreement among participants across all three metrics (survival, routing, and travel time), with no single covariate emerging as a clear choice. 
 
-#### Survival
+---
+
+#### Rationales
+
+##### Survival
 
 Opinion was split between OMR flow, Vernalis flow, and CVP + SWP Exports. The choice depended on whether participants prioritized the upstream driver (Vernalis), a localized integrated measure (OMR), or the direct impact of the pumps (Exports). The rationale was also complicated by the counterintuitive role of "salvage," where being entrained at the pumps could lead to higher survival for some fish via trucking, especially in dry years. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -326,12 +335,11 @@ Opinion was split between OMR flow, Vernalis flow, and CVP + SWP Exports. The ch
 
 - The 6 Year and VAMP studies showed that when the head of old river barrier is not in place that fish survival was increased via increased exports and increased salvage.
 
+---
 
-#### Routing
+##### Routing
 
 Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The disagreement centered on whether fish movement is best explained by the overall hydrodynamic conditions reflected by OMR, or by the direct pull of the export facilities (i.e., Exports). Most expressed significant uncertainty and some questioned the precise definition of "routing" in this region with multiple junctions. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -370,13 +378,11 @@ Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The di
 
 - Exports change the hydrodynamics the greatest in this region and thus likely have the greatest impact on routing.
 
-#### Travel Time
+---
 
-*Summary*
+##### Travel Time
 
 Participants primarily chose between OMR (slight majority) and Exports. Those who selected OMR cited it as the best single metric for the region's combined hydrodynamics. Those who chose Exports pointed to two distinct mechanisms that reduce travel time: 1) the direct hydrodynamic pull drawing fish to the facilities faster, and 2) the "shortcut" provided by being salvaged and trucked downstream. Participants noted that the best covariate for travel time likely depends on the specific route a fish takes within the region (e.g., towards the pumps vs. downstream).
-
-##### Rationales
 
 **OMR**
 
@@ -407,6 +413,8 @@ Based on Fig 5 Panels D-F of Pope et al 2025, OMR seems to be more explanatory (
 
 - Higher exports mean that fish are more likely to be salvaged thus travel time would be quicker since they are transported to the Benicia area after salvage.
 
+---
+
 ## Region 3 (Downstream San Joaquin River) Covariates
 
 ### Covariate Selection
@@ -433,15 +441,19 @@ kable(results_pc_r1 %>% filter(region == 3) %>% select(metric, covariate, prop, 
   row_spec(row = 0, bold = TRUE) 
 ```
 
-### Summary
+### Explanations
+
+#### Summary
 
 Disagreement among participants across all three metrics (survival, routing, and travel time) between OMR and Vernalis Flow as the best predictor variable in the region. Also overall low confidence from the participants. A common sentiment was that none of the provided options were a good fit for this region.  
 
-#### Survival
+---
+
+#### Rationales
+
+##### Survival
 
 Opinion was split for both survival and routing, with OMR flow holding a slight majority over Vernalis flow. Some participants chose OMR with hesitation, describing it as a "least-bad" option or a counterintuitive statistical finding. The general rationale was that OMR was the “best of the lot” that integrates the influence of tides and exports, even though its direct mechanistic link in the region is unclear. Those who chose Vernalis Flow thought that the upstream conditions that guided fish into the reach should logically continue to have some influence. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -475,8 +487,9 @@ Opinion was split for both survival and routing, with OMR flow holding a slight 
 
 - At this point they should be past the influence of Vernalis flows and survival would be negatively correlated to a more negative OMR as a greater zone of influence may draw migrating fish into the upper OMR corridor (Region 4; interior delta) where survival has been shown to be lower.
 
+---
 
-#### Routing
+##### Routing
 
 *See Survival section above for summary*
 
@@ -512,11 +525,11 @@ Opinion was split for both survival and routing, with OMR flow holding a slight 
 
 - I believe the biggest covariate for region 3 is tidal flow. However that was not provided as an option.
 
-#### Travel Time
+---
+
+##### Travel Time
 
 Participants expressed high degree of uncertainty, with selections split between Vernalis Flow and OMR. Participants pointed out that statistical analyses show all three covariates have very weak, "flat," or non-existent relationships with travel time in this region. The selections were thus made with low confidence, often defaulting to a choice made for the other metrics for the sake of consistency. 
-
-##### Rationales
 
 **Vernalis Flow**
 
@@ -546,6 +559,8 @@ Participants expressed high degree of uncertainty, with selections split between
 
 - Again I believe that tidal flows are likely the biggest covariate with travel time in this region. However, that is not an option to select.
 
+---
+
 ## Region 4 (Old and Middle River, Upstream) Covariates
 
 ### Covariate Selection
@@ -571,15 +586,19 @@ kable(results_pc_r1 %>% filter(region == 4) %>% select(metric, covariate, prop, 
   row_spec(row = 0, bold = TRUE) 
 ```
 
-### Summary
+### Explanations
+
+#### Summary
 
 Broad support that in this region, hydrodynamics and fish fate are overwhelmingly driven by the operations of the south Delta export facilities. Participants chose either OMR flow or CVP + SWP Exports across all three metrics. 
 
-#### Survival
+---
+
+#### Rationales
+
+##### Survival 
 
 Participant opinion was divided between OMR and CVP + SWP Exports, which reflects differences in rationale between a general conditions metric versus a direct cause. Some also posited that for fish, being entrained and subsequently trucked downstream via salvage operations may offer a higher probability of survival. 
-
-##### Rationales
 
 **OMR**
 
@@ -611,11 +630,11 @@ Participant opinion was divided between OMR and CVP + SWP Exports, which reflect
 
 - Once fish are in region 4 they are most likely to survive if salvaged. Higher export rates should increase salvage.
 
-#### Routing
+---
+
+##### Routing
 
 For both metrics, OMR was the favored choice for most participants. The primary rationale is that OMR is the most geographically relevant measure and the best single metric for integrating the complex interplay of forces in the interior Delta, including exports, tides, and inflows from both the Sacramento and San Joaquin rivers. The selection of OMR was also cited as being better supported by the Pope et al. (2025) analysis. For those who selected Exports, they cited Export as the strongest causal factor influencing routing and travel time here. 
-
-##### Rationales
 
 **OMR**
 
@@ -647,11 +666,11 @@ For both metrics, OMR was the favored choice for most participants. The primary 
 
 - Fish follow the flow. I don't think that any one of these covariates is more important in this reach. Buchanan 2024. Buchanan found that higher CVP exports were associated with fish being more likely to enter interior Delta, but this was not the case for SWP exports (Buchanan 2025 presentation).
 
-#### Travel Time
+---
+
+##### Travel Time
 
 (See Routing section above for summary)
-
-##### Rationales
 
 **OMR**
 
@@ -682,6 +701,8 @@ OMR strongest association.
 **CVP & SWP Exports**
 
 - Higher exports will move fish quicker to the salvage facilities.
+
+---
 
 ## Additional Topics
 
