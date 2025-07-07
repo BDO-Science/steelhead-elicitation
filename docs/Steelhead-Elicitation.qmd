@@ -3,8 +3,8 @@ title: "Steelhead-Elicitation"
 format:
   html:
     toc: true
-    toc-depth: 4
-    toc-expand: 2
+    toc-depth: 5
+    toc-expand: 3
     html-math-method: katex
 ---
 
@@ -15,6 +15,7 @@ knitr::opts_chunk$set(message = FALSE, warning = FALSE, echo = FALSE)
 # Steelhead Elicitation Results Round 1
 
 These are the results of Steelhead STARS Elicitation 1.
+We have displayed covariate results, and shared all rationale responses, accompanied by summaries by region and metric. While we've provided an executive summary for convenience, we highly recommend reading the detailed rationales and resources that the participants provided. The summaries, by nature, can't fully capture the nuances and caveats provided by the participants.
 
 ```{r, echo = FALSE}
 library(readr)
@@ -348,7 +349,6 @@ Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The di
 - Buchanan 2024
 
 - **Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?**
-
 
 **OMR**
 
@@ -732,7 +732,7 @@ If and when the final version of the model is posted online, we will ensure that
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
 
 - Tidal flow should be considered as the primary covariate for region 3
-  - Daily timestep makes tidal flow less useful as a metric. *[Address timestep of this model]*
+  - **[Address timestep of this model]**
   
 - Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).
 
@@ -750,7 +750,7 @@ If and when the final version of the model is posted online, we will ensure that
 
 [Resources Folder](https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources)
 
-- [A Shiny app to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.](https://fishsciences.shinyapps.io/delta-hydrodynamics/)
+- A [Shiny app](https://fishsciences.shinyapps.io/delta-hydrodynamics/) to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.
   - Accompanying graphics in DSM2 Hydro Simulations
 - Anchor QEA 2022
 - Attachment 6 LTO Salmon EA

@@ -44,7 +44,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="2">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
@@ -52,43 +52,64 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#region-designations" id="toc-region-designations" class="nav-link" data-scroll-target="#region-designations">Region Designations</a></li>
   <li><a href="#region-1-upper-san-joaquin-river-covariates" id="toc-region-1-upper-san-joaquin-river-covariates" class="nav-link" data-scroll-target="#region-1-upper-san-joaquin-river-covariates">Region 1 (Upper San Joaquin River) Covariates</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#covariate-selection" id="toc-covariate-selection" class="nav-link" data-scroll-target="#covariate-selection">Covariate Selection</a></li>
   <li><a href="#explanations" id="toc-explanations" class="nav-link" data-scroll-target="#explanations">Explanations</a>
   <ul class="collapse">
   <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
-  <li><a href="#rationales" id="toc-rationales" class="nav-link" data-scroll-target="#rationales">Rationales</a></li>
+  <li><a href="#rationales" id="toc-rationales" class="nav-link" data-scroll-target="#rationales">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival" id="toc-survival" class="nav-link" data-scroll-target="#survival">Survival</a></li>
+  <li><a href="#routing" id="toc-routing" class="nav-link" data-scroll-target="#routing">Routing</a></li>
+  <li><a href="#travel-time" id="toc-travel-time" class="nav-link" data-scroll-target="#travel-time">Travel Time</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   <li><a href="#region-2-old-and-middle-river-corridors-downstream-covariates" id="toc-region-2-old-and-middle-river-corridors-downstream-covariates" class="nav-link" data-scroll-target="#region-2-old-and-middle-river-corridors-downstream-covariates">Region 2 (Old and Middle River Corridors, Downstream) Covariates</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#covariate-selection-1" id="toc-covariate-selection-1" class="nav-link" data-scroll-target="#covariate-selection-1">Covariate Selection</a></li>
   <li><a href="#explanations-1" id="toc-explanations-1" class="nav-link" data-scroll-target="#explanations-1">Explanations</a>
   <ul class="collapse">
   <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1">Summary</a></li>
-  <li><a href="#rationales-1" id="toc-rationales-1" class="nav-link" data-scroll-target="#rationales-1">Rationales</a></li>
+  <li><a href="#rationales-1" id="toc-rationales-1" class="nav-link" data-scroll-target="#rationales-1">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-1" id="toc-survival-1" class="nav-link" data-scroll-target="#survival-1">Survival</a></li>
+  <li><a href="#routing-1" id="toc-routing-1" class="nav-link" data-scroll-target="#routing-1">Routing</a></li>
+  <li><a href="#travel-time-1" id="toc-travel-time-1" class="nav-link" data-scroll-target="#travel-time-1">Travel Time</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   <li><a href="#region-3-downstream-san-joaquin-river-covariates" id="toc-region-3-downstream-san-joaquin-river-covariates" class="nav-link" data-scroll-target="#region-3-downstream-san-joaquin-river-covariates">Region 3 (Downstream San Joaquin River) Covariates</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#covariate-selection-2" id="toc-covariate-selection-2" class="nav-link" data-scroll-target="#covariate-selection-2">Covariate Selection</a></li>
   <li><a href="#explanations-2" id="toc-explanations-2" class="nav-link" data-scroll-target="#explanations-2">Explanations</a>
   <ul class="collapse">
   <li><a href="#summary-2" id="toc-summary-2" class="nav-link" data-scroll-target="#summary-2">Summary</a></li>
-  <li><a href="#rationales-2" id="toc-rationales-2" class="nav-link" data-scroll-target="#rationales-2">Rationales</a></li>
+  <li><a href="#rationales-2" id="toc-rationales-2" class="nav-link" data-scroll-target="#rationales-2">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-2" id="toc-survival-2" class="nav-link" data-scroll-target="#survival-2">Survival</a></li>
+  <li><a href="#routing-2" id="toc-routing-2" class="nav-link" data-scroll-target="#routing-2">Routing</a></li>
+  <li><a href="#rationales-3" id="toc-rationales-3" class="nav-link" data-scroll-target="#rationales-3">Rationales</a></li>
+  <li><a href="#travel-time-2" id="toc-travel-time-2" class="nav-link" data-scroll-target="#travel-time-2">Travel Time</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   <li><a href="#region-4-old-and-middle-river-upstream-covariates" id="toc-region-4-old-and-middle-river-upstream-covariates" class="nav-link" data-scroll-target="#region-4-old-and-middle-river-upstream-covariates">Region 4 (Old and Middle River, Upstream) Covariates</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#covariate-selection-3" id="toc-covariate-selection-3" class="nav-link" data-scroll-target="#covariate-selection-3">Covariate Selection</a></li>
   <li><a href="#explanations-3" id="toc-explanations-3" class="nav-link" data-scroll-target="#explanations-3">Explanations</a>
   <ul class="collapse">
   <li><a href="#summary-3" id="toc-summary-3" class="nav-link" data-scroll-target="#summary-3">Summary</a></li>
-  <li><a href="#rationales-4" id="toc-rationales-4" class="nav-link" data-scroll-target="#rationales-4">Rationales</a></li>
+  <li><a href="#rationales-4" id="toc-rationales-4" class="nav-link" data-scroll-target="#rationales-4">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-3" id="toc-survival-3" class="nav-link" data-scroll-target="#survival-3">Survival</a></li>
+  <li><a href="#routing-3" id="toc-routing-3" class="nav-link" data-scroll-target="#routing-3">Routing</a></li>
+  <li><a href="#travel-time-3" id="toc-travel-time-3" class="nav-link" data-scroll-target="#travel-time-3">Travel Time</a></li>
+  </ul></li>
   </ul></li>
   </ul></li>
   <li><a href="#additional-topics" id="toc-additional-topics" class="nav-link" data-scroll-target="#additional-topics">Additional Topics</a>
-  <ul class="collapse">
+  <ul>
   <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions">Questions</a></li>
   <li><a href="#caveatssuggestions" id="toc-caveatssuggestions" class="nav-link" data-scroll-target="#caveatssuggestions">Caveats/Suggestions</a></li>
   <li><a href="#concerns" id="toc-concerns" class="nav-link" data-scroll-target="#concerns">Concerns</a></li>
@@ -119,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="steelhead-elicitation-results-round-1" class="level1">
 <h1>Steelhead Elicitation Results Round 1</h1>
-<p>These are the results of Steelhead STARS Elicitation 1.</p>
+<p>These are the results of Steelhead STARS Elicitation 1. We have displayed covariate results, and shared all rationale responses, accompanied by summaries by region and metric. While we’ve provided an executive summary for convenience, we highly recommend reading the detailed rationales and resources that the participants provided. The summaries, by nature, can’t fully capture the nuances and caveats provided by the participants.</p>
 <section id="region-designations" class="level2">
 <h2 class="anchored" data-anchor-id="region-designations">Region Designations</h2>
 <div class="quarto-figure quarto-figure-center">
@@ -836,7 +857,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Likely more options need to be considered or within variable wet/normal/dry scenarios</p></li>
 <li><p>Tidal flow should be considered as the primary covariate for region 3</p>
 <ul>
-<li>Daily timestep makes tidal flow less useful as a metric. <em>[Address timestep of this model]</em></li>
+<li><strong>[Address timestep of this model]</strong></li>
 </ul></li>
 <li><p>Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).</p></li>
 <li><p>Covariates should be ranked primarily on their mechanistic basis and the strength of that physical effect in the region of interest. For example, if the expected effect of exports is altered hydrodynamics, exports should not be considered as a covariate in regions where exports do appreciably change hydrodynamic conditions experienced and perceived by fish. Should be an option to have none of these three environmental covariates in regions where none of a clear, strong mechanistic effect.</p></li>
@@ -855,7 +876,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="resources">Resources</h2>
 <p><a href="https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources">Resources Folder</a></p>
 <ul>
-<li><a href="https://fishsciences.shinyapps.io/delta-hydrodynamics/">A Shiny app to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.</a>
+<li>A <a href="https://fishsciences.shinyapps.io/delta-hydrodynamics/">Shiny app</a> to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.
 <ul>
 <li>Accompanying graphics in DSM2 Hydro Simulations</li>
 </ul></li>
