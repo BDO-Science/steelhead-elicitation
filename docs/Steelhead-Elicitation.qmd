@@ -1,5 +1,6 @@
 ---
 title: "Steelhead-Elicitation"
+date: "`r Sys.Date()`"
 format:
   html:
     toc: true
@@ -349,6 +350,7 @@ Opinions spread across OMR (slight majority), Exports, and Vernalis Flow. The di
 - Buchanan 2024
 
 - **Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?**
+  - Answer: The fish have already decided to enter Region 2.
 
 **OMR**
 
@@ -709,7 +711,7 @@ OMR strongest association.
 ### Questions
 
 - **On what basis should we determine "primary covariate"?**
-  - When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by: 
+  - When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by any of the following: 
     - A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect). 
     - The strongest statistical correlation with the parameter. 
     - The overall logical fit for the specific region in question. 
@@ -718,6 +720,7 @@ OMR strongest association.
 - **(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? **
 
 - **There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e. <5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? **
+  - See Note below
 
 
 ### Caveats/Suggestions
@@ -732,7 +735,7 @@ If and when the final version of the model is posted online, we will ensure that
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
 
 - Tidal flow should be considered as the primary covariate for region 3
-  - **[Address timestep of this model]**
+  - **[Address daily timestep of this model]**
   
 - Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).
 

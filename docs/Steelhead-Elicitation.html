@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-07-09">
 
 <title>Steelhead-Elicitation</title>
 <style>
@@ -131,6 +132,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 9, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -439,7 +446,10 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>NOTE: Votes for Vernalis and OMR, based on Fig 8 Panels A-C (HOR out) of Pope et al 2025. Vernalis slightly steeper BUT okay with OMR as well given the similarity in slopes.</p></li>
 <li><p>Buchanan 2024</p></li>
-<li><p><strong>Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?</strong></p></li>
+<li><p><strong>Question: for routing in this region, have the fish already decided to enter this region? In other words, are we selecting a covariate that not just influences routing within the region but also whether fish enter HOR instead of staying in SJR?</strong></p>
+<ul>
+<li>Answer: The fish have already decided to enter Region 2.</li>
+</ul></li>
 </ul>
 <p><strong>OMR</strong></p>
 <ul>
@@ -836,7 +846,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p><strong>On what basis should we determine “primary covariate”?</strong></p>
 <ul>
-<li>When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by:
+<li>When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by any of the following:
 <ul>
 <li>A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect).</li>
 <li>The strongest statistical correlation with the parameter.</li>
@@ -845,7 +855,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Note that the potential predictors (OMR, Vernalis flow, and Exports) are highly collinear. Therefore, this exercise is not expected to significantly alter the model’s overall performance. The primary goal is to construct a final, more defensible model that incorporates the predictor that makes the most sense for each region.</li>
 </ul></li>
 <li><p><strong>(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? </strong></p></li>
-<li><p><strong>There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e.&nbsp;&lt;5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? </strong></p></li>
+<li><p><strong>There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e.&nbsp;&lt;5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? </strong></p>
+<ul>
+<li>See Note below</li>
+</ul></li>
 </ul>
 </section>
 <section id="caveatssuggestions" class="level3">
@@ -857,7 +870,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Likely more options need to be considered or within variable wet/normal/dry scenarios</p></li>
 <li><p>Tidal flow should be considered as the primary covariate for region 3</p>
 <ul>
-<li><strong>[Address timestep of this model]</strong></li>
+<li><strong>[Address daily timestep of this model]</strong></li>
 </ul></li>
 <li><p>Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).</p></li>
 <li><p>Covariates should be ranked primarily on their mechanistic basis and the strength of that physical effect in the region of interest. For example, if the expected effect of exports is altered hydrodynamics, exports should not be considered as a covariate in regions where exports do appreciably change hydrodynamic conditions experienced and perceived by fish. Should be an option to have none of these three environmental covariates in regions where none of a clear, strong mechanistic effect.</p></li>
