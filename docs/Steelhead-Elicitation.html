@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-07-09">
+<meta name="dcterms.date" content="2025-07-16">
 
 <title>Steelhead-Elicitation</title>
 <style>
@@ -135,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 9, 2025</p>
+      <p class="date">July 16, 2025</p>
     </div>
   </div>
   
@@ -844,9 +844,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="questions" class="level3">
 <h3 class="anchored" data-anchor-id="questions">Questions</h3>
 <ul>
-<li><p><strong>On what basis should we determine “primary covariate”?</strong></p>
+<li><strong>On what basis should we determine “primary covariate”?</strong>
 <ul>
-<li>When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by any of the following:
+<li><em>Response</em>: When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by any of the following:
 <ul>
 <li>A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect).</li>
 <li>The strongest statistical correlation with the parameter.</li>
@@ -854,10 +854,17 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Note that the potential predictors (OMR, Vernalis flow, and Exports) are highly collinear. Therefore, this exercise is not expected to significantly alter the model’s overall performance. The primary goal is to construct a final, more defensible model that incorporates the predictor that makes the most sense for each region.</li>
 </ul></li>
-<li><p><strong>(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? </strong></p></li>
-<li><p><strong>There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e.&nbsp;&lt;5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? </strong></p>
+<li><strong>(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? </strong>
+<ul>
+<li><em>Response</em>: The primary distinction between Regions 2 and 4 is the departure point/“head” of each region. Region 2 is associated with fish entering Old River at the HOR junction, extending from HOR to either the export facilities or to the Old/Middle River at Hwy 4. Region 4 originates at Turner Cut, and fish entering this region can either migrate toward the export facilities or continue westward (through Frank’s Tract) toward Jersey Point and Chipps Island. While there is some overlap, the transition from Old/Middle R. at Hwy 4 to the facilities is not available to Region 2 fish since both of these are destinations rather than origins.</li>
+</ul></li>
+<li><strong>There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e.&nbsp;&lt;5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? </strong>
+<ul>
+<li><em>Response</em>:
 <ul>
 <li>See Note below</li>
+<li>Barrier “in” and “out” are both well represented in the current dataset.</li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -868,12 +875,15 @@ ul.task-list li input[type="checkbox"] {
 <hr>
 <ul>
 <li><p>Likely more options need to be considered or within variable wet/normal/dry scenarios</p></li>
-<li><p>Tidal flow should be considered as the primary covariate for region 3</p>
+<li><p><strong>Tidal flow should be considered as the primary covariate for region 3</strong></p>
 <ul>
-<li><strong>[Address daily timestep of this model]</strong></li>
+<li><em>Response</em>: The model uses a daily timestep for covariates for several reasons. One is computational efficiency — each model fitting run already requires &gt; 7 days and moving to a sub-daily timestep would increase run times even more. Another reason is that each covariate value, assigned to each individual on the day of its departure from the head of a reach, is purported to represent the reach conditions for that individual during its transit time through the reach. We chose a daily timescale for covariates because it more closely matches the reach-to-reach timescale of fish migration than say an hourly timestep that a covariate such as tidal flow would require.</li>
 </ul></li>
 <li><p>Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).</p></li>
-<li><p>Covariates should be ranked primarily on their mechanistic basis and the strength of that physical effect in the region of interest. For example, if the expected effect of exports is altered hydrodynamics, exports should not be considered as a covariate in regions where exports do appreciably change hydrodynamic conditions experienced and perceived by fish. Should be an option to have none of these three environmental covariates in regions where none of a clear, strong mechanistic effect.</p></li>
+<li><p><strong>Covariates should be ranked primarily on their mechanistic basis and the strength of that physical effect in the region of interest. For example, if the expected effect of exports is altered hydrodynamics, exports should not be considered as a covariate in regions where exports do appreciably change hydrodynamic conditions experienced and perceived by fish. Should be an option to have none of these three environmental covariates in regions where none of a clear, strong mechanistic effect.</strong></p>
+<ul>
+<li><em>Response</em>: Please use “Null” if you do not think any of the available variables are suitable for a given selection. Note that a selection of “Null” would use a single average value for the metric.</li>
+</ul></li>
 <li><p>All responses are within the context of “modern” operations post-2009 under the conditions observed in literature cited. I am uncertain of what the primary covariate would be if operations were significantly changed during juvenile salmonid outmigration period. There are many factors, if significantly modified may impact survival and routing– installation of barriers, habitat restoration improvements to facilities, significant increases or decreases of pumping rates, predator control measures, changes to trucking and release operations. For example, if water exports were always at maximum capacity or significantly more negative than -5,000 OMR Index, exports and OMR more likely to influence routing than under modern conditions. Exports and OMR could become increasingly more of important covariate on survival in those regions that are close in proximity to export facilities. I’m uncertain if it would be more of negative impact on survival or positive impact on survival. Under poor conditions, perhaps it would increase survival by through the salvage operations, fish would get a free ride to a better environment like we have seen in some chinook salmon studies. However, the salvage operations are most efficient at a specific rate–not too fast and not too slow.</p></li>
 <li><p>Probably more relevant for chinook: My hypothesis that the salvage operations route probably increases survival of fry-size chinook during wet years. We observe a lot of fry-size chinook in salvage during wet years. Most of salmonid observations for these routing and survival studies are based on smolt-sized fish that are large enough to be acoustically tagged.</p></li>
 </ul>
