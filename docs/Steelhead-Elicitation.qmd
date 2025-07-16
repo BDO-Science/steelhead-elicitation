@@ -711,16 +711,21 @@ OMR strongest association.
 ### Questions
 
 - **On what basis should we determine "primary covariate"?**
+
   - *Response*: When determining the primary covariate, we ask that you use your expert judgment to select the single most appropriate predictor from the (admittedly limited) options provided.Your decision should be based on which factor you believe is most influential or representative, which may be guided by any of the following: 
-    - A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect). 
-    - The strongest statistical correlation with the parameter. 
-    - The overall logical fit for the specific region in question. 
+  - A plausible mechanistic underpinning (i.e., a direct physical or biological reason for the effect). 
+  - The strongest statistical correlation with the parameter. 
+  - The overall logical fit for the specific region in question. 
   - Note that the potential predictors (OMR, Vernalis flow, and Exports) are highly collinear. Therefore, this exercise is not expected to significantly alter the model's overall performance. The primary goal is to construct a final, more defensible model that incorporates the predictor that makes the most sense for each region. 
   
+  
 - **(Question about Pope et al 2025) [Participant] would welcome some discussion about Region 2 and Region 4. Region 2 appears to overlap Region 4 from the export facilities north to HWY 4 – do survivals and travel times between those receivers contribute to relationships in both regions? Is there an assumed direction for transiting Region 4? Is it correct that fish that enter the mainstem San Joaquin River through the mouths of Middle or Old River (NOT via Turner Cut) do not contribute to transit success of Region 4? **
+
   - *Response*: The primary distinction between Regions 2 and 4 is the departure point/"head" of each region. Region 2 is associated with fish entering Old River at the HOR junction, extending from HOR to either the export facilities or to the Old/Middle River at Hwy 4. Region 4 originates at Turner Cut, and fish entering this region can either migrate toward the export facilities or continue westward (through Frank's Tract) toward Jersey Point and Chipps Island. While there is some overlap, the transition from Old/Middle R. at Hwy 4 to the facilities is not available to Region 2 fish since both of these are destinations rather than origins. 
 
+
 - **There is no current commitment or regulatory requirement for any barrier (rock or non-physical) at Head of Old River (HOR). So, [Participant] assessed the explanatory value of the various covariates within the “barrier out” panels of figures. However, [Participant] wonders if this ends up ignoring (a) much of the AT data which may have been conducted with the barrier in, and (b) much of the “more usual” Vernalis flows, i.e. <5,000 cfs which, under past regulatory regimes, would be associated with “barrier in”. What did other participants think about barrier status? **
+
   - *Response*: 
     - See Note below
     - Barrier "in" and "out" are both well represented in the current dataset.
@@ -738,6 +743,7 @@ If and when the final version of the model is posted online, we will ensure that
 - Likely more options need to be considered or within variable wet/normal/dry scenarios
 
 - **Tidal flow should be considered as the primary covariate for region 3**
+
   - *Response*: The model uses a daily timestep for covariates for several reasons. One is computational efficiency — each model fitting run already requires > 7 days and moving to a sub-daily timestep would increase run times even more. Another reason is that each covariate value, assigned to each individual on the day of its departure from the head of a reach, is purported to represent the reach conditions for that individual during its transit time through the reach. We chose a daily timescale for covariates because it more closely matches the reach-to-reach timescale of fish migration than say an hourly timestep that a covariate such as tidal flow would require.
   
 - Might it be reasonable to make competing predictions using competing covariates in some reaches, if the model set was restrained to just a couple of alternatives? The user would then select which model to use (e.g., OMR-driven dynamics in Region 4 vs export-driven dynamics in Region 4).
