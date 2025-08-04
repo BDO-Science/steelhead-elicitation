@@ -7,6 +7,7 @@ format:
     toc-depth: 5
     toc-expand: 3
     html-math-method: katex
+    tools: [kableExtra]
 ---
 
 ```{r setup, include = FALSE}
@@ -139,17 +140,17 @@ ggplot(results_pc_r2 %>% filter(region == 1)) +
   theme_bw()+
   theme(axis.text = element_text(size = 14), axis.title = element_text(size = 14), legend.text = element_text(size = 14), legend.title = element_text(size = 14))
 ```
-
 ```{r}
-kable(results_pc_r2 %>% filter(region == 1) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
+kable(results_pc_r2 %>% filter(region == 1) %>% select(metric, covariate, prop, med_conf) %>%arrange(metric),
+      format = "html",
+      align = "c",
       label = NA,
       vline = "",
       caption = "Covariates and Confidence for Region 1 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
-  kable_classic(html_font = "Cambria") %>%
-      row_spec(c(4,8,12),extra_css = "border-bottom: 1px solid;") %>%
+  kable_styling(full_width = F) %>%
   row_spec(row = 0, bold = TRUE) %>%
-    kable_styling(full_width = F) 
+  row_spec(c(4,8, 12),extra_css = "border-bottom: 1px solid;")
 ```
 
 ### Explanations
@@ -285,13 +286,15 @@ ggplot(results_pc_r2 %>% filter(region == 2)) +
 
 ```{r}
 kable(results_pc_r2 %>% filter(region == 2) %>% select(metric, covariate, prop, med_conf) %>%arrange(metric),
+      format = "html",
+      align = "c",
       label = NA,
       vline = "",
       caption = "Covariates and Confidence for Region 2 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
-    kable_classic(html_font = "Cambria") %>%
-      row_spec(c(4,8,12),extra_css = "border-bottom: 1px solid;") %>% kable_styling(full_width = F) %>%
-  row_spec(row = 0, bold = TRUE) 
+  kable_styling(full_width = F) %>%
+  row_spec(row = 0, bold = TRUE) %>%
+  row_spec(c(4,8, 12),extra_css = "border-bottom: 1px solid;")
 
 ```
 
@@ -440,15 +443,16 @@ ggplot(results_pc_r2 %>% filter(region == 3)) +
 
 
 ```{r}
-kable(results_pc_r2 %>% filter(region == 3) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
+kable(results_pc_r2 %>% filter(region == 3) %>% select(metric, covariate, prop, med_conf) %>%arrange(metric),
+      format = "html",
+      align = "c",
       label = NA,
       vline = "",
       caption = "Covariates and Confidence for Region 3 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
   kable_styling(full_width = F) %>%
-  kable_classic(html_font = "Cambria") %>%
-      row_spec(c(4,8,12),extra_css = "border-bottom: 1px solid;") %>%
-  row_spec(row = 0, bold = TRUE) 
+  row_spec(row = 0, bold = TRUE) %>%
+  row_spec(c(4,8, 12),extra_css = "border-bottom: 1px solid;")
 ```
 
 ### Explanations
@@ -597,15 +601,16 @@ ggplot(results_pc_r2 %>% filter(region == 4)) +
 ```
 
 ```{r}
-kable(results_pc_r2 %>% filter(region == 4) %>% select(metric, covariate, prop, med_conf) %>% arrange(metric),
+kable(results_pc_r2 %>% filter(region == 4) %>% select(metric, covariate, prop, med_conf)  %>%arrange(metric),
+      format = "html",
+      align = "c",
       label = NA,
       vline = "",
       caption = "Covariates and Confidence for Region 4 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.",
       valign = "t") %>%
   kable_styling(full_width = F) %>%
-  kable_classic(html_font = "Cambria") %>%
-      row_spec(c(4,8,12),extra_css = "border-bottom: 1px solid;") %>%
-  row_spec(row = 0, bold = TRUE) 
+  row_spec(row = 0, bold = TRUE) %>%
+  row_spec(c(4,8, 12),extra_css = "border-bottom: 1px solid;")
 ```
 
 ### Explanations
