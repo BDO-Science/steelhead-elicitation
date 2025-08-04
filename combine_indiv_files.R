@@ -4,6 +4,8 @@ library(readr)
 library(here)
 library(data.table)
 
+# Combine individual csv files into one file (same as original spreadsheet)
+
 input_dir <- "round2_indiv_responses/"
 
 # list files
