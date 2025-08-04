@@ -47,7 +47,7 @@ res1 = read_csv(here("docs/Steelhead STARS Elicitation Round 1.csv"), skip = 1,
                               "comments1", "comments2"
                                                                       ))
 # rename confidence
-results <- res1 %>%
+results1 <- res1 %>%
   mutate(across(starts_with("cov"), ~as.factor(.))) %>%
   mutate(
     across(
@@ -61,11 +61,11 @@ results <- res1 %>%
     )
 
 # just the comments for processing
-comments <- results %>%
+comments <- results1 %>%
   select(Name, comments1, comments2)
 
 # make results in a way easy to plot
-results_r1 <- results %>%
+results_r1 <- results1 %>%
   pivot_longer(
     cols = starts_with("conf") | starts_with("cov") | starts_with("rat"),
     names_to = "original_col_name",
