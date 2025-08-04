@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-08-04">
+
+<title>Round 2 Steelhead Elicitation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="steelhead-elicitation-r2_files/libs/clipboard/clipboard.min.js"></script>
+<script src="steelhead-elicitation-r2_files/libs/quarto-html/quarto.js"></script>
+<script src="steelhead-elicitation-r2_files/libs/quarto-html/popper.min.js"></script>
+<script src="steelhead-elicitation-r2_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="steelhead-elicitation-r2_files/libs/quarto-html/anchor.min.js"></script>
+<link href="steelhead-elicitation-r2_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="steelhead-elicitation-r2_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="steelhead-elicitation-r2_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="steelhead-elicitation-r2_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="steelhead-elicitation-r2_files/libs/bootstrap/bootstrap-1bc8a17f135ab3d594c857e9f48e611b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="steelhead-elicitation-r2_files/libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="steelhead-elicitation-r2_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#steelhead-elicitation-results-round-2" id="toc-steelhead-elicitation-results-round-2" class="nav-link active" data-scroll-target="#steelhead-elicitation-results-round-2">Steelhead Elicitation Results Round 2</a>
+  <ul>
+  <li><a href="#region-designations" id="toc-region-designations" class="nav-link" data-scroll-target="#region-designations">Region Designations</a></li>
+  <li><a href="#region-1-upper-san-joaquin-river-covariates" id="toc-region-1-upper-san-joaquin-river-covariates" class="nav-link" data-scroll-target="#region-1-upper-san-joaquin-river-covariates">Region 1 (Upper San Joaquin River) Covariates</a>
+  <ul>
+  <li><a href="#covariate-selection" id="toc-covariate-selection" class="nav-link" data-scroll-target="#covariate-selection">Covariate Selection</a></li>
+  <li><a href="#explanations" id="toc-explanations" class="nav-link" data-scroll-target="#explanations">Explanations</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#rationales" id="toc-rationales" class="nav-link" data-scroll-target="#rationales">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival" id="toc-survival" class="nav-link" data-scroll-target="#survival">Survival</a></li>
+  <li><a href="#routing" id="toc-routing" class="nav-link" data-scroll-target="#routing">Routing</a></li>
+  <li><a href="#travel-time" id="toc-travel-time" class="nav-link" data-scroll-target="#travel-time">Travel Time</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#region-2-old-and-middle-river-corridors-downstream-covariates" id="toc-region-2-old-and-middle-river-corridors-downstream-covariates" class="nav-link" data-scroll-target="#region-2-old-and-middle-river-corridors-downstream-covariates">Region 2 (Old and Middle River Corridors, Downstream) Covariates</a>
+  <ul>
+  <li><a href="#covariate-selection-1" id="toc-covariate-selection-1" class="nav-link" data-scroll-target="#covariate-selection-1">Covariate Selection</a></li>
+  <li><a href="#explanations-1" id="toc-explanations-1" class="nav-link" data-scroll-target="#explanations-1">Explanations</a>
+  <ul class="collapse">
+  <li><a href="#summary-1" id="toc-summary-1" class="nav-link" data-scroll-target="#summary-1">Summary</a></li>
+  <li><a href="#rationales-1" id="toc-rationales-1" class="nav-link" data-scroll-target="#rationales-1">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-1" id="toc-survival-1" class="nav-link" data-scroll-target="#survival-1">Survival</a></li>
+  <li><a href="#routing-1" id="toc-routing-1" class="nav-link" data-scroll-target="#routing-1">Routing</a></li>
+  <li><a href="#travel-time-1" id="toc-travel-time-1" class="nav-link" data-scroll-target="#travel-time-1">Travel Time</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#region-3-downstream-san-joaquin-river-covariates" id="toc-region-3-downstream-san-joaquin-river-covariates" class="nav-link" data-scroll-target="#region-3-downstream-san-joaquin-river-covariates">Region 3 (Downstream San Joaquin River) Covariates</a>
+  <ul>
+  <li><a href="#covariate-selection-2" id="toc-covariate-selection-2" class="nav-link" data-scroll-target="#covariate-selection-2">Covariate Selection</a></li>
+  <li><a href="#explanations-2" id="toc-explanations-2" class="nav-link" data-scroll-target="#explanations-2">Explanations</a>
+  <ul class="collapse">
+  <li><a href="#summary-2" id="toc-summary-2" class="nav-link" data-scroll-target="#summary-2">Summary</a></li>
+  <li><a href="#rationales-2" id="toc-rationales-2" class="nav-link" data-scroll-target="#rationales-2">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-2" id="toc-survival-2" class="nav-link" data-scroll-target="#survival-2">Survival</a></li>
+  <li><a href="#routing-2" id="toc-routing-2" class="nav-link" data-scroll-target="#routing-2">Routing</a></li>
+  <li><a href="#travel-time-2" id="toc-travel-time-2" class="nav-link" data-scroll-target="#travel-time-2">Travel Time</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#region-4-old-and-middle-river-upstream-covariates" id="toc-region-4-old-and-middle-river-upstream-covariates" class="nav-link" data-scroll-target="#region-4-old-and-middle-river-upstream-covariates">Region 4 (Old and Middle River, Upstream) Covariates</a>
+  <ul>
+  <li><a href="#covariate-selection-3" id="toc-covariate-selection-3" class="nav-link" data-scroll-target="#covariate-selection-3">Covariate Selection</a></li>
+  <li><a href="#explanations-3" id="toc-explanations-3" class="nav-link" data-scroll-target="#explanations-3">Explanations</a>
+  <ul class="collapse">
+  <li><a href="#summary-3" id="toc-summary-3" class="nav-link" data-scroll-target="#summary-3">Summary</a></li>
+  <li><a href="#rationales-3" id="toc-rationales-3" class="nav-link" data-scroll-target="#rationales-3">Rationales</a>
+  <ul class="collapse">
+  <li><a href="#survival-3" id="toc-survival-3" class="nav-link" data-scroll-target="#survival-3">Survival</a></li>
+  <li><a href="#routing-3" id="toc-routing-3" class="nav-link" data-scroll-target="#routing-3">Routing</a></li>
+  <li><a href="#cvp-swp-exports-4" id="toc-cvp-swp-exports-4" class="nav-link" data-scroll-target="#cvp-swp-exports-4">CVP + SWP Exports</a></li>
+  <li><a href="#travel-time-3" id="toc-travel-time-3" class="nav-link" data-scroll-target="#travel-time-3">Travel Time</a></li>
+  </ul></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#additional-comments" id="toc-additional-comments" class="nav-link" data-scroll-target="#additional-comments">Additional Comments</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Round 2 Steelhead Elicitation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 4, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="steelhead-elicitation-results-round-2" class="level1">
+<h1>Steelhead Elicitation Results Round 2</h1>
+<p>These are the results of Steelhead STARS Elicitation Round 2. We have displayed covariate results, and shared all rationale responses. Bolded responses are those that have changed. accompanied by summaries by region and metric. While we’ve provided an executive summary for convenience, we highly recommend reading the detailed rationales and resources that the participants provided. The summaries, by nature, can’t fully capture the nuances and caveats provided by the participants.</p>
+<section id="region-designations" class="level2">
+<h2 class="anchored" data-anchor-id="region-designations">Region Designations</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="stars_regions.png" class="img-fluid figure-img"></p>
+<figcaption>Map of regions used for STARS covariate elicitation. Figure copied from Figure 1 of Pope et al.&nbsp;2025</figcaption>
+</figure>
+</div>
+</section>
+<section id="region-1-upper-san-joaquin-river-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="region-1-upper-san-joaquin-river-covariates">Region 1 (Upper San Joaquin River) Covariates</h2>
+<section id="covariate-selection" class="level3">
+<h3 class="anchored" data-anchor-id="covariate-selection">Covariate Selection</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="steelhead-elicitation-r2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Covariates and Confidence for Region 1 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">metric</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">covariate</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">prop</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">med_conf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Survival</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">1.00</td>
+<td style="text-align: right; border-bottom: 1px solid;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Routing</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.94</td>
+<td style="text-align: right; border-bottom: 1px solid;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">TravelTime</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.94</td>
+<td style="text-align: right; border-bottom: 1px solid;">3</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="explanations" class="level3">
+<h3 class="anchored" data-anchor-id="explanations">Explanations</h3>
+<p>Near-unanimous consensus among experts that Vernalis flow is the primary driver for all three metrics (survival, routing, and travel time).</p>
+<section id="summary" class="level4">
+<h4 class="anchored" data-anchor-id="summary">Summary</h4>
+<hr>
+</section>
+<section id="rationales" class="level4">
+<h4 class="anchored" data-anchor-id="rationales">Rationales</h4>
+<section id="survival" class="level5">
+<h5 class="anchored" data-anchor-id="survival">Survival</h5>
+<p>General agreement that higher Vernalis flow is directly correlated with higher survival rates. This was attributed to a combination of factors, including improved water quality (e.g., lower temperatures), reduced predation risk due to faster transit, and the minimal hydrodynamic influence of south Delta exports in this region.</p>
+<section id="vernalis-flow" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow">Vernalis Flow</h6>
+<ul>
+<li><p>SJR flow strongly influences hydrodynamic conditions experienced by juvenile steelhead in most of this region. In contrast, export effects on hydrodynamics are very weak in this region. OMR flows integrate exports and Vernalis flows. Since export effects are weak in this region while SJR flow effects are strong, there is no advantage to using OMR flows over SJR flows (Vernalis Flow). Lastly, this finding has been affirmed by prior analyses.</p></li>
+<li><p>Based on the original 6-year study and South Delta steelhead survival studies by Matthias et al.&nbsp;(Cat has them). Looking at 2011, we saw the highest survival and lower survival during critical and dry water years (2012-2016). Vernalis flows are also correlated with water temperatures (higher flows are often associated with lower temperatures and, again, higher survival). Vernalis flows are also associated with lower travel time, so smolts are able to move faster through this reach, thus reducing exposure to predators.</p></li>
+<li><p>Ongoing San Joaquin steelhead telemetry studies has found a strong correlation between steelhead survival and Vernalis flows.</p></li>
+<li><p>Mainstem flow will have the biggest impact on survival given this region’s outline and it’s indirect effects on OMR and Exports</p></li>
+<li><p>2024 CAMT Salmon Technical Working Group Final Report “a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta”; Buchanan steelhead routing presentation June 2025; Buchanan et al.&nbsp;2021; Pope et al.&nbsp;2025; Buchanan and Whitlock 2022</p></li>
+<li><p>Exports may play less of a role in entraining juvenile Chinook Salmon when outflow from the San Joaquin River is high</p></li>
+<li><p>Based on survival analyses from steelhead tagged in 2021,2022,2024</p></li>
+<li><p>The 6 Year and VAMP studies show a positive relationship between Vernalis flow and salmonid survival in reach 1.</p></li>
+<li><p>Buchanan, R.A., Skalski, J.R. Relating survival of fall-run Chinook Salmon through the San Joaquin Delta to river flow. I feel this publication is does a very good job at disentangling spatially differing survival probabilities, and validly suggest that flow in the riverine areas of the SJR is positively correlated to survival.</p></li>
+<li><p>same as prev. [Based on Fig 4 Panels A-C of Pope et al 2025]</p></li>
+<li><p>Multiple models of steelhead and Chinook salmon survival in this system and other systems indicate the primacy of river discharge in driving changes in survival in a riverine reach such as Region 1, including Perry et al.&nbsp;(2018), Buchanan et al.&nbsp;(2021), and Pope et al.&nbsp;(2025). Buchanan and Whitlock (2022) found that temperature was better supported than Delta inflow for fall-run Chinook salmon in this region; the correlation between temperature and flow makes it difficult to separate effects, but also suggests that Vernalis flow is more relevant than either exports or OMR. Increased flow is expected to improve water quality (including temperature) while also providing increased volume of accessible habitat, improved travel time, and improved rearing opportunities, all of which support the role of flow in survival in this region. Additionally, hydrodynamics in this region are only minimally effected by exports and OMR, if at all (Cavallo et al.&nbsp;2013: Cavallo, B., P. Gaskill, and J. Melgo. 2013. Investigating the influence of tides, inflows, and exports on sub-daily flow in the Sacramento-San Joaquin Delta. Cramer Fish Sciences Report. 64 pp.&nbsp;Available online at: http://www.fishsciences.net/reports/2013/Cavallo_et_al_Delta_Flow_Report.pdf.).</p></li>
+<li><p>Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis</p></li>
+<li><p>Vernalis flows have been found to be a strong predictor of survival in this river segment, based in analyses presented in Buchanan et al.&nbsp;(2021) and Pope et al.&nbsp;(2025). This covariate is also warranted because of the proximity of the region to the Vernalis gaging station.</p></li>
+<li><p>Buchanan et al.&nbsp;2022 found that survival of steelhead in this reach was most strongly associated with flow with exports having a far weaker effect. This is a region where flow can change from bi-directional to unidirectional as inflows increase. On the Sacramento river, Chinook survival in these “transitional” reaches also responded strongly to inflow (Perry et al.&nbsp;2018). There is not a lot of opportunity for exports to affect hydrodynamics in this reach except when flows are very low and exports are high (Cavallo et al.&nbsp;2015). Buchanan (2024) found that localized flow metrics had a greater affect on routing in this reach compared to larger scale metrics.</p></li>
+<li><p>Observations and analysis from the 6-year steelhead study showing more fish taking the SJ route and subsequently surviving when flows are higher (see reports for 2021, 2022, and 2024; Matthias, B. G., L. Yamane, and T. Senegal. 2025. Estimation of juvenile Steelhead survival and routing migrating through the Delta: 2024 Six-Year Steelhead Survival Study Statistical Methods and Results. Submitted to U. S. Bureau of Reclamation for Interagency Agreement R21PG00013.)</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="routing" class="level5">
+<h5 class="anchored" data-anchor-id="routing">Routing</h5>
+<p>Majority of participants identified Vernalis flow as the key factor determining whether fish stay in the mainstem San Joaquin River or drawn into the interior Delta at the Head of Old River (note that one participant selected OMR). The purported mechanism was that higher flows create stronger downstream currents that keep fish on their primary migratory path. The Head of Old River Barrier (HORB) is acknowledged as a dominant factor when it’s present, but Vernalis flow is considered the key hydrodynamic driver when the barrier is not in place.</p>
+<section id="vernalis-flow-1" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-1">Vernalis Flow</h6>
+<ul>
+<li><p>Strongest hydrodynamic influenced in Region 1. See previous response.</p></li>
+<li><p>Based on the Buchanan and Matthias work on South Delta steelhead, Vernalis flows and the presence of the HORB are the biggest factors in driving routing at the Head of Old River. the Matthias et al.&nbsp;2025 report on the 2024 survival study (figure 19) shows this well. Most fish go into Old River at HOR during dry and critically dry water years without the HORB (&gt;80%) and it looks to be about a 50/50 split during above normal and wet water year types.</p></li>
+<li><p>Ongoing studies have shown a strong correlation of routing through this region (i.e.&nbsp;staying in the San Joaquin River or routing into the Head of Old River or Turner Cut) to Vernalis Flows.</p></li>
+<li><p>San Joaquin flow affects the other covariates, however variable flow from the mainstem will dictate routing and timing.</p></li>
+<li><p>Buchanan 2024. Buchanan Delta routing presentation 2025. However, Cavallo et al.&nbsp;2015 and Dodrill et al.&nbsp;2022 somewhat contradictory (high flows associated with salmon taking the Old River Route) Buchanan 2024 (high flows associated with steelhead taking San Joaquin River route; however, note species differences between these investigations).</p></li>
+<li><p>Exports may play less of a role in entraining juvenile Chinook Salmon when outflow from the San Joaquin River is high.</p></li>
+<li><p>Higher Vernalis flow will lead to more fish taking the San Joaquin River route. However, higher Vernalis flow will also increase exports, so more fish may take the Old River route during those instances. I’m assuming this question is for routing (staying within) the San Joaquin River route.</p></li>
+<li><p>Increased Vernalis flow should increase the number of steelhead remaining in the San Joaquin River when the head of old river barrier is not in place. I would suggest that the largest covariate for routing is not any of the 3 choices presented but rather barrier in or barrier out.</p></li>
+<li><p>I expect the same covariate that affect survival also influence routing, hence my choices for this section reflect those from Section 1 (survival).</p></li>
+<li><p><strong>Prefer Vernalis (same explanataion as prev. round) but exporst also okay. [Votes for OMR and Vernalis, based on Fig 8 Panels A-C (HOR out) of Pope et al 2025. Similar slopes, but Vernalis slightly steeper. ]</strong></p></li>
+<li><p>Anchor QEA (2022) found that juvenile steelhead moved downstream in the San Joaquin at the head of Old River when net flow was high; this was also found by Buchanan (2024), who also found that net flow and Vernalis flow were very highly correlated at the head of Old River. Anchor QEA (2022) found that tidal flow was more important than net flow in dry years, however. Neither study found support for exports influencing routing of steelhead at the head of Old River. Vernalis inflow was not associated with routing at Turner Cut (Buchanan 2024); instead, tidal flow, flow proportion, and net flow are expected to have the strongest effects. Anchor QEA (2022) predicted an effect of exports on routing at Turner Cut, and Buchanan (2024) found an effect of CVP exports there, but not of SWP exports; the Salmon Scoping Team’s hydrodynamic modeling synthesis does not support an effect of exports on routing in Turner Cut, howerver. None of the three covariates under consideration is expected to be strongly influential on routing at Turner Cut, but OMR seems most related to tidal flow at that junction (even though OMR is measured in a different region).</p></li>
+<li><p>Buchanan 2024 found that flow variables were better predictors of routing than exports or I:E. She did not test OMR but I:E also combines exports and inflows similar to OMR</p></li>
+<li><p>Observations and analysis from the 6-year steelhead study showing more fish taking the SJ route (see reports for 2021, 2022, and 2024; Matthias, B. G., L. Yamane, and T. Senegal. 2025. Estimation of juvenile Steelhead survival and routing migrating through the Delta: 2024 Six-Year Steelhead Survival Study Statistical Methods and Results. Submitted to U. S. Bureau of Reclamation for Interagency Agreement R21PG00013.)</p></li>
+</ul>
+</section>
+<section id="omr" class="level6">
+<h6 class="anchored" data-anchor-id="omr">OMR</h6>
+<ul>
+<li>The analysis of this region in Pope et al.&nbsp;(2025) found a strong effect of OMR regardless of HOR barrier status</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="travel-time" class="level5">
+<h5 class="anchored" data-anchor-id="travel-time">Travel Time</h5>
+<p>Agreement that higher Vernalis flow leads to shorter travel times. Increased flow should result in higher water velocity, allowing fish to move through the region more quickly and reducing their overall exposure to various sources of mortality.</p>
+<section id="vernalis-flow-2" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-2">Vernalis Flow</h6>
+<ul>
+<li><p>See previous responses for this region.</p></li>
+<li><p>The higher the flows, the faster fish will be able to move through here. Although it should be noted that this area does experience reverse flows when Vernalis flows are low and exports are high. Even when this happens, Vernalis flows are still going to be low and this effect should be adequately captured when using Vernalis flow as the covariate.</p></li>
+<li><p>This is pretty clear, the higher the Vernalis Flows the quicker the fish make it through this corridor.</p></li>
+<li><p>Pope et al.&nbsp;2025</p></li>
+<li><p>Higher Vernalis flows will increase fish speed (decrease travel time) in this region.</p></li>
+<li><p>Higher vernalis flows should result in lower travel times in this reach.</p></li>
+<li><p>I would expect the same covariates that affect route choice and survival to also affect travel time; while no single covariate explains these parameters across the entire delta, I believe the regionally distinct covariates affect transit time, survival and routing in the same fashion.</p></li>
+<li><p>same as prev. round [Vernalis (based on Fig 4 Panels D-F of Pope et al 2025), but OMR and Exports look very similar though slightly less steep.]</p></li>
+<li><p>Survival is expected to be higher when travel time is lower (XT model), and survival is driven more by Vernalis flow than by exports or OMR in this mostly riverine region. Vernalis flow is expected to have a bigger impact on water velocity in this region than is exports or OMR. When flow is low, tidal flow will have a bigger impact, which will result in slower travel. However, OMR might have a stronger association with travel time in the downstream end of this reach, since both the OMR corridor and the lower San Joaquin are affected more by tides than by Delta inflow.</p></li>
+<li><p>Pope et al.&nbsp;(2025) reported a strong effect for this covariate</p></li>
+<li><p>Strongest effect in Pope et al.&nbsp;2025. Distance from CVP/SWP and export volume relative to tidal volume makes export effects less likely</p></li>
+<li><p>Observations and analysis from the 6-year steelhead studies showing a negative relationship with travel time and inflow (Buchanan et al.&nbsp;2025; see reports for 2021, 2022, and 2024; Matthias, B. G., L. Yamane, and T. Senegal. 2025. Estimation of juvenile Steelhead survival and routing migrating through the Delta: 2024 Six-Year Steelhead Survival Study Statistical Methods and Results. Submitted to U. S. Bureau of Reclamation for Interagency Agreement R21PG00013.)</p></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="region-2-old-and-middle-river-corridors-downstream-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="region-2-old-and-middle-river-corridors-downstream-covariates">Region 2 (Old and Middle River Corridors, Downstream) Covariates</h2>
+<section id="covariate-selection-1" class="level3">
+<h3 class="anchored" data-anchor-id="covariate-selection-1">Covariate Selection</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="steelhead-elicitation-r2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="lightable-classic table caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Covariates and Confidence for Region 2 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">metric</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">covariate</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">prop</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">med_conf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Survival</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.31</td>
+<td style="text-align: right; border-bottom: 1px solid;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Routing</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.19</td>
+<td style="text-align: right; border-bottom: 1px solid;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">TravelTime</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.06</td>
+<td style="text-align: right; border-bottom: 1px solid;">3</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="explanations-1" class="level3">
+<h3 class="anchored" data-anchor-id="explanations-1">Explanations</h3>
+<section id="summary-1" class="level4">
+<h4 class="anchored" data-anchor-id="summary-1">Summary</h4>
+<p>Disagreement among participants across all three metrics (survival, routing, and travel time), with OMR emerging this round as the preferred covariate due to its incorporation of multiple hydrodynamic variables.</p>
+<hr>
+</section>
+<section id="rationales-1" class="level4">
+<h4 class="anchored" data-anchor-id="rationales-1">Rationales</h4>
+<section id="survival-1" class="level5">
+<h5 class="anchored" data-anchor-id="survival-1">Survival</h5>
+<p>Opinion was split between OMR flow, Vernalis flow, and CVP + SWP Exports. The choice depended on whether participants prioritized the upstream driver (Vernalis), a localized integrated measure (OMR), or the direct impact of the pumps (Exports). Some shifts to OMR due to its inclusion of both Vernalis and exports. The rationale was also complicated by the counterintuitive role of “salvage,” where being entrained at the pumps could lead to higher survival for some fish via trucking, especially in dry years.</p>
+<section id="vernalis-flow-3" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-3">Vernalis Flow</h6>
+<ul>
+<li><p>When the Head of Old River Barrier is NOT in place, SJR flow strongly influences hydrodynamic conditions experienced by juvenile steelhead in the Old River/GLC region. Exports influence entertainment risk for fish that reach the SWP and CVP intakes, but don’t influence hydrodynamics as broadly as SJR inflows do. OMR is measured in the OMR corridor and so is more relevant to Region 4. In general, covariates in Region 2 are difficult because the routing/fate of fish reaching the CVP/SWP area is poorly distinguished by receiver arrays and by the existing analysis. Positive OMR flows typically occur when exports are highest, and negative OMR flows occur when exports are relatively low. With entertainment contributing to through-Delta survival, OMR flows are likely to yield counter-intuitive results regarding survival (because how fish survive is not defined in the analysis).</p></li>
+<li><p><strong>Assuming that we are focusing on the fish that enter region 2 from HOR, which primarily occurs without the barrier in place. Hydrodynamics in region 2 is influenced both by Vernalis and exports. OMR is a combination of exports and Vernalis flow. I chose Vernalis because Pope et al (2025) indicates it is a better predictor of survival (tighter 90% confidence envelop particularly in lower survivals.</strong></p></li>
+<li><p>OMR and exports have more of an influence on this region in comparison to other regions, however flow is going to have a larger impact. Pope et al.&nbsp;2025 found that “overall survival appears more strongly associated with OMR flows and Vernalis flows, increasing as these flows increased”. I selected Vernalis flows over OMR since Vernalis flows have a strong influence on OMR. Pope et al 2025 “overall survival in the region was not strongly associated with exports”. Also, higher flows likely to associated with cooler water temperatures that may reduce predation rates.</p></li>
+<li><p>This is a big region that includes multiple sources of hydrodynamic drivers: flow from upstream, pumping, and tides. It is unlikely that a single factor is dominant in all parts of this region. Exports is likely to be dominant close to the water projects (e.g., from western Grant Line Canal to just north of the radial gates), while Vernalis flow is likely to be dominant closer to the head of Old River. OMR is likely to be dominant at Highway 4 and in Middle River. Buchanan and Whitlock (2022) found a stronger effect of Vernalis flow than of exports or OMR in this region (for San Joaquin fall-run Chinook), but model fit was poor and they concluded that combining detection at the export facilities with detection at Highway 4 masked any signal of either exports or OMR. Transition to the CVP was moderately associated with CVP exports, but model fit was poor. It seems reasonable to assume that transition to Highway 4 is more associated with OMR, but I do not know of results that have found that directly. Pope et al.&nbsp;(2025) found a positive relationship between survival and both Vernalis flow and OMR. I am waffling between Vernalis flow and OMR, but am going with Vernalis flow because all fish in this region enter via the head of Old River.</p></li>
+<li><p>This seems to be the strongest predictor in Pope et al.&nbsp;2025. The region encompasses both transitional and full bidirectional areas as well as the export facilities and may have variable influences at different scales (e.g.&nbsp;the closer you are to the facilities the more influence they will have). OMR has a similar effect but it is itself a combination of inflow and exports. Since exports appear to have little effect, I would conclude it is flow driving the OMR effect</p></li>
+</ul>
+</section>
+<section id="omr-1" class="level6">
+<h6 class="anchored" data-anchor-id="omr-1">OMR</h6>
+<ul>
+<li><p>Overall, I expect survival to be higher with higher Vernalis flows (Buchanan reports/publications and recent Matthias et al.&nbsp;South Delta reports). Looking at 2011, we saw the highest survival and lower survival during critical and dry water years (2012-2016). Vernalis flows are also correlated with water temperatures (higher flows are often associated with lower temperatures and, again, higher survival). Vernalis flows are also associated with lower travel time, so smolts are able to move faster through this reach, thus reducing exposure to predators.</p></li>
+<li><p><strong>Changed my response to OMR based on other rationales that OMR best captures the interaction of Vernalis outflow and export levels.</strong></p></li>
+<li><p>Salvage at both the CVP and SWP export facilities has been determined either directly by the volume of combined exports or by local hydrodynamic conditions strongly influenced by exports (e.g., OMR flow);</p></li>
+<li><p>Based on the number of fish detected (surviving) to SWP/CVP facilities, OMR flows were higher during this time, which I assume led to faster travel times and ultimately higher survival</p></li>
+<li><p>Similar to the above, Buchanan &amp; Skalski (2020) suggest that variables affecting survival in the different regions of the Delta differ by region, with a transformed flow metrics of OMR affecting survival the most in this region.</p></li>
+<li><p><strong>It includes both Vernalis and export effects. Also, OMR was in the top running in our first round.</strong></p></li>
+<li><p>Pope et al.&nbsp;(2025) identified strong effects for all three predictors in this region, however, OMR preferable because it incorporates information about inflows, exports, and tides.</p></li>
+<li><p>Waffled between OMR and exports. Pope et al.&nbsp;(2025) slightly nudged me towards OMR. It doesn’t appear flow or exports alone have as big an effect, but OMR in some case can be associated with survival in this region.</p></li>
+</ul>
+</section>
+<section id="cvp-swp-exports" class="level6">
+<h6 class="anchored" data-anchor-id="cvp-swp-exports">CVP + SWP Exports</h6>
+<ul>
+<li>The 6 Year and VAMP studies showed that when the head of old river barrier is not in place that fish survival was increased via increased exports and increased salvage.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="routing-1" class="level5">
+<h5 class="anchored" data-anchor-id="routing-1">Routing</h5>
+<p>Opinions spread across OMR, Exports, and Vernalis Flow. The disagreement centered on whether fish movement is best explained by the overall hydrodynamic conditions reflected by OMR, or by the direct pull of the export facilities (i.e., Exports). Greater shifts to OMR this round due to its inclusion of both Vernalis flow and exports.</p>
+<section id="vernalis-flow-4" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-4">Vernalis Flow</h6>
+<ul>
+<li><p>Strongest, broadest hydrodynamic influence in Region 2. See previous response. Exports influence routing (entertainment at CVP/SWP) but this routing is not represented in the current model.</p></li>
+<li><p><strong>Perhaps consider splitting this region. Pope et al (2025) indicates that Vernalis flow is a strong predictor of route selection for fish that enter and remain in Old River. Yet exports is a much better predictor for fish that enter Middle River (and Turner Cut). Since I expect that more fish take the Old River route, I selected Vernalis for this round.</strong></p></li>
+<li><p>Buchanan 2024</p></li>
+</ul>
+</section>
+<section id="omr-2" class="level6">
+<h6 class="anchored" data-anchor-id="omr-2">OMR</h6>
+<ul>
+<li><p>This is going to be highly dependent on water year type (e.g., Vernalis flows) and exports. The region encompasses the pumping facilities and there is no disentangling Vernalis flows and exports here. Therefore, it seems the most reasonable to assume OMR flows would be the best covariate at describing routing in this reach.</p></li>
+<li><p><strong>Changed my response to OMR based on other rationales that OMR best captures the interaction of Vernalis outflow and export levels.</strong></p></li>
+<li><p>Given the region, OMR would play the biggest role.</p></li>
+<li><p>Salvage at both the CVP and SWP export facilities has been determined either directly by the volume of combined exports or by local hydrodynamic conditions strongly influenced by exports (e.g., OMR flow).</p></li>
+<li><p>Same as above.</p></li>
+<li><p>Anchor QEA (2022) found that Steelhead were likely to move away from the CVP trash racks or radial gates, although more likely to enter the facilities when exports were high, and that they responded to tidal flow and net flow. OMR reflects both exports and tides.</p></li>
+<li><p><strong>Since this includes both Vernalis and export effects. Also, OMR was in the top running in [the] first round.</strong></p></li>
+<li><p>OMR is a measure that incorporates tides and exports and the values defining the measure are especially relevant for this location.</p></li>
+<li><p>I am selecting this only because it combines exports and flows. I don’t know of any information on routing in this reach. However, generalized models suggest flow proportion at junctions as drivers (Cavallo et al.&nbsp;2015, Perry et al.&nbsp;2015)</p></li>
+</ul>
+</section>
+<section id="cvp-swp-exports-1" class="level6">
+<h6 class="anchored" data-anchor-id="cvp-swp-exports-1">CVP + SWP Exports</h6>
+<ul>
+<li><p>Higher exports will increase the flow going into the Head of Old River and ultimately attract steelhead within that region</p></li>
+<li><p>Exports change the hydrodynamics the greatest in this region and thus likely have the greatest impact on routing.</p></li>
+<li><p>This was a gut feeling that once in the region exports would have more of an association that the other two covariates. I think Pope et al.&nbsp;(2025) also suggests exports can influence routing.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="travel-time-1" class="level5">
+<h5 class="anchored" data-anchor-id="travel-time-1">Travel Time</h5>
+<p>Participants primarily chose between OMR (majority) and Exports. Those who selected OMR cited it as the best single metric for the region’s combined hydrodynamics. Those who chose Exports pointed to two distinct mechanisms that reduce travel time: 1) the direct hydrodynamic pull drawing fish to the facilities faster, and 2) the “shortcut” provided by being salvaged and trucked downstream. Participants noted that the best covariate for travel time likely depends on the specific route a fish takes within the region (e.g., towards the pumps vs.&nbsp;downstream).</p>
+<section id="vernalis-flow-5" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-5">Vernalis Flow</h6>
+<ul>
+<li>See previous responses for this region.</li>
+</ul>
+</section>
+<section id="omr-3" class="level6">
+<h6 class="anchored" data-anchor-id="omr-3">OMR</h6>
+<ul>
+<li><p>This area is complex and encompasses reaches where Vernalis flows will still have an impact, but pumping is also a big factor. OMR should be able to capture most of the effects represented in Vernalis flows and exports.</p></li>
+<li><p>Pope et al.&nbsp;2025. Trend depends on the route selected.</p></li>
+<li><p>Same as above.</p></li>
+<li><p><strong>This includes both Vernalis and exports efects.</strong></p></li>
+<li><p>Pope et al.&nbsp;(2025) reported a strongest effect size for this covariate</p></li>
+<li><p>It appears in Pope et al.&nbsp;2025 that both exports and inflows exert an effect. To the extent that OMR represents those effects, it should capture them both. However, where a fish is within the region has an effect. Likely and artifact of regions not being defined strictly by hydrology</p></li>
+<li><p>Figure 5 in Pope et al.&nbsp;(2025) seems to capture the stronger association of OMR with travel time. Though the text does point out that the direction of the relationship depends on the route chosen.</p></li>
+</ul>
+</section>
+<section id="cvp-swp-exports-2" class="level6">
+<h6 class="anchored" data-anchor-id="cvp-swp-exports-2">CVP + SWP Exports</h6>
+<ul>
+<li><p>Higher exports mean that fish are more likely to be salvaged thus travel time would be quicker since they are transported to the Benicia area after salvage.</p></li>
+<li><p><strong>Travel time depends on the route selected in this region and the influence of each of these covariate is also route specific. The eastern side of this region is still strongly influenced by Vernalis when the barrier is not installed. I chose exports because it is the covariate with the least uncertainty in its relation to travel time in Figure 5 of Pope et al (2025). With that said, for fish that do not go to the export pumps (HOR to OR4 or MR4), OMR would be a better covariate.</strong></p></li>
+<li><p>Higher CVP+SWP exports will increase fish speed (decrease travel time). I believe the opposite would be true of lower exports in this region (decreased fish speed, increased travel time)</p></li>
+<li><p>When exports are high then travel times are low to the salvage holding tanks.</p></li>
+<li><p>More accurately, I would say exports for HOR to CVP/SWP, and OMR for HOR to OR4/MR4, based on Pope et al.&nbsp;(2025). Exports are expected to draw fish from the head of Old River more quickly toward the export facilities, and to have less effect on travel time between the facilities and Highway 4. For HOR to OR4 and HOR to MR4, OMR looks like a better choice, both based on Pope et al.&nbsp;(2025) and on consideration of hydrodynamic patterns between the facilities and Highway 4.</p></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="region-3-downstream-san-joaquin-river-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="region-3-downstream-san-joaquin-river-covariates">Region 3 (Downstream San Joaquin River) Covariates</h2>
+<section id="covariate-selection-2" class="level3">
+<h3 class="anchored" data-anchor-id="covariate-selection-2">Covariate Selection</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="steelhead-elicitation-r2_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table lightable-classic caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Covariates and Confidence for Region 3 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">metric</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">covariate</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">prop</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">med_conf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.44</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Survival</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.38</td>
+<td style="text-align: right; border-bottom: 1px solid;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.56</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Routing</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.19</td>
+<td style="text-align: right; border-bottom: 1px solid;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.25</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">TravelTime</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.50</td>
+<td style="text-align: right; border-bottom: 1px solid;">1.5</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="explanations-2" class="level3">
+<h3 class="anchored" data-anchor-id="explanations-2">Explanations</h3>
+<section id="summary-2" class="level4">
+<h4 class="anchored" data-anchor-id="summary-2">Summary</h4>
+<p>Disagreement among participants across all three metrics (survival, routing, and travel time) between OMR and Vernalis Flow as the best predictor variable in the region. Also overall low confidence from the participants. A common sentiment was that none of the provided options were a good fit for this region, thus some participants also shifted to select “Null.”</p>
+<hr>
+</section>
+<section id="rationales-2" class="level4">
+<h4 class="anchored" data-anchor-id="rationales-2">Rationales</h4>
+<section id="survival-2" class="level5">
+<h5 class="anchored" data-anchor-id="survival-2">Survival</h5>
+<p>Opinion was split for both survival and routing, with OMR flow holding a slight majority over Vernalis flow. Some participants chose OMR with hesitation, describing it as a “least-bad” option, and some switched to “Null” this round. The general rationale was that OMR was the “best of the lot” that integrates the influence of tides and exports, even though its direct mechanistic link in the region is unclear. Those who chose Vernalis Flow thought that the upstream conditions that guided fish into the reach should logically continue to have some influence.</p>
+<section id="vernalis-flow-6" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-6">Vernalis Flow</h6>
+<ul>
+<li><p>This region is strongly tidal. None of these covariates have a mechanistic basis for meaningfully influencing route selection.</p></li>
+<li><p>This region is the farthest away from both the pumps and the San Joaquin River Delta entry point (e.g., Mossdale) and should have the lowest influence (or biggest mixed influence) of any covariate. Given the high survival during 2011, I am making the assumption this would be the biggest driver of survival. OMR flows could also be a good candidate.</p></li>
+<li><p>For fish to enter this reach, most of them took the mainstem San Joaquin River I assume, since fish taking Old River and ending up at the salvage facilities would be trucked farther downstream. Therefore San Joaquin River flow would be the strongest driver since it has more influence in this region.</p></li>
+<li><p>At high vernalis flows salmonids should move through the region faster and have less time for exposure to predation.</p></li>
+<li><p>The spatial connectivity to Region 1 suggests that an extension of that route/region would be more pertinent to survival in Region 3 than the spatially distinct covariates of OMR and Exports.</p></li>
+<li><p>Although OMR may be a stronger predictor in Pope et al.&nbsp;2025, exports appear to have little effect. Thus, I would conclude it is flow driving the OMR effect with exports potentially adding to the effect under certain conditions (e.g.&nbsp;low flows or certain tidal periods). Flow was also strongest predictor for total Delta survival in Buchanan et al.&nbsp;2022.</p></li>
+</ul>
+</section>
+<section id="omr-4" class="level6">
+<h6 class="anchored" data-anchor-id="omr-4">OMR</h6>
+<ul>
+<li><p>At this point they should be past the influence of Vernalis flows and survival would be negatively correlated to a more negative OMR as a greater zone of influence may draw migrating fish into the upper OMR corridor (Region 4; interior delta) where survival has been shown to be lower.</p></li>
+<li><p>Tidal influence plays a big role in this region especially within different flow regimes. Likely the primary covariate shifts within this region.</p></li>
+<li><p><strong>None of the 3 covariate options have a dominant effect on flow/velocity in this region. The relative effect of each covariate in this region depends on other factors. For instance, with some conditions when Jersey Point flow is negative, the traditional OMR (Old River at Bacon Island plus Middle River at Middle River USGS gages) may influence conditions in the most eastern section of this region (San Joquin River near the mouth of Old River upstream to Columbia Cut), but not likely effecting conditions west of Jersey Point. At other times, with high Vernalis flows, Vernalis might be a dominant covariate throughout this region. Since the dominance of each covariate varies, it does not seem approprate to select a single covariate in this region. With that said, Pope et al (2025) found a decent relationship in this region between OMR and survival probability. I do not think this is mechanistic, but instead reflective of the fact that the OMR covariate is influenced by both Vernalis and exports. I think other covariates would be better for this region, but of the 3 we are given, I chose OMR based on Pope et al (2025)</strong></p></li>
+<li><p>When juvenile salmonids are present in the Delta, higher numbers of juveniles salvaged are associated with more negative OMR flows</p></li>
+<li><p>Pope et al.&nbsp;(2025) found a positive relationship between OMR and survival in this region for steelhead. For Chinook, Buchanan &amp; Whitlock (2022) found a relationship between the magnitude (but not direction) of flow in the Old/Middle River corridor and survival from head of Old River to Chipps Island, but not for survival from head of Old River to Turner Cut or to the water export facilities, suggesting that the effect was for survival in the downstream regions (3 and 4 combined). Water flow in this region is affected by tides, exports, and Delta inflow from the Sacramento River with some effect of SJR flow (depending on DCC gate status and exports; Monsen et al.&nbsp;2007; Cavallo et al.&nbsp;2013). For steelhead, Buchanan et al.&nbsp;(2021) found only an effect of migration route in this region, no effect of exports, OMR, or Vernalis flow (actually combines Regions 3 and 4). My first vote is OMR, second is exports for Region 3.</p></li>
+<li><p>The analysis of this region in Pope et al.&nbsp;(2025) found a strong effect of OMR and relatively flat slopes for other covariates, making OMR the most an appealing choice. However, a case could be made that Vernalis Flow would be better, considering that the the region is situated along the path of the main stem the San Joaquin River.</p></li>
+<li><p>Results from Buchanan et al.&nbsp;(2021) and Pope et al.&nbsp;(2025). It seems intuitive that this region would be best associated with an index that can reflect tidal influences, as well as exports from the pumps.</p></li>
+</ul>
+</section>
+<section id="null" class="level6">
+<h6 class="anchored" data-anchor-id="null">Null</h6>
+<ul>
+<li><p>More influenced by tides. Buchanan 2024. Communications with USGS. Pope et al.&nbsp;2025 “survival positively associated with OMR flows”. I don’t understand why OMR flows would be a good predictor for this region that is further away from water export facilities.</p></li>
+<li><p><strong>No clear explanatory choice for a simgular covariate</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="routing-2" class="level5">
+<h5 class="anchored" data-anchor-id="routing-2">Routing</h5>
+<p><em>See Survival section above for summary</em></p>
+<section id="vernalis" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis">Vernalis</h6>
+<ul>
+<li><p>Given the distance from both Varnalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player. Also, I am not entirely sure what routing option we are looking at (taking 3-Mile Slough vs.&nbsp;Jersey Point to Chipps?</p></li>
+<li><p>I expect the same covariate that affect survival also influence routing, hence my choices for this section reflect those from Section 1 (survival).</p></li>
+</ul>
+</section>
+<section id="omr-5" class="level6">
+<h6 class="anchored" data-anchor-id="omr-5">OMR</h6>
+<ul>
+<li><p>This region is strongly tidal. None of these covariates have a mechanistic basis for meaningfully influencing route selection.</p></li>
+<li><p>Once fish are in this region they’re routing is likely influenced more by the zone of influence of OMR, which would potentially draw fish into the interior delta if OMR is more negative.</p></li>
+<li><p>There are way more covariates that need to be addressed and involved within this region to determine exactly which is the primary.</p></li>
+<li><p>Juvenile salmonids that are exposed to the hydrodynamic changes in the waterways immediately adjacent to the CVP and SWP export facilities are expected to have reduced migratory success.</p></li>
+<li><p>I believe the biggest covariate for region 3 is tidal flow. However that was not provided as an option.</p></li>
+<li><p>OMR represents conditions that are closer to this region than either exports or Vernalis flow. OMR reflects both exports and tides, so is likely to have more information for routing than exports alone. Cavallo et al.&nbsp;(2013) predicted an effect of inflow on hydrodynamics in this region when exports were low, but they did not distinguish between inflow from the Sacramento River and inflow from the San Joaquin River.</p></li>
+<li><p>The analysis of this region in Pope et al.&nbsp;(2025) found a strong effect of OMR on entrainment. Also, the fact that OMR incorporates tide and export information makes it an attractive choice.</p></li>
+<li><p>I am selecting this only because it combines exports and flows. I don’t know of any information on routing in this reach. However, generalized models suggest flow proportion at junctions as drivers (Cavallo et al.&nbsp;2015, Perry et al.&nbsp;2015)</p></li>
+<li><p>Results from Buchanan et al.&nbsp;(2021) suggest SJR inflow lacks a relationship with survival and thus, to me, routing. This is where it again seems intuitive that this region would be best associated with an index that can reflect tidal influences, as well as exports from the pumps.</p></li>
+</ul>
+</section>
+<section id="null-1" class="level6">
+<h6 class="anchored" data-anchor-id="null-1">Null</h6>
+<ul>
+<li><p><strong>None of the 3 covariate options have a dominant effect on flow/velocity in this region. The relative effect of each covariate in this region depends on other factors. For instance, with some conditions when Jersey Point flow is negative, the traditional OMR (Old River at Bacon Island plus Middle River at Middle River USGS gages) may influence conditions in the most eastern section of this region (San Joquin River near the mouth of Old River upstream to Columbia Cut), but not likely effecting conditions west of Jersey Point. At other times, with high Vernalis flows, Vernalis might be a dominant covariate throughout this region. Since the dominance of each covariate varies, it does not seem approprate to select a single covariate in this region. Also, please note that the OMR used in the Pope et al (2025) paper uses a station about 10km further south than the typical Old River station. The new Pope et al (2025) OMR value may not have much relevance on the San Joaquin River north or west of Franks Tract, which makes up most of this region.</strong></p></li>
+<li><p>Do not think these covariates explain routing. Tides; poor correlations. Buchanan 2024</p></li>
+<li><p><strong>No clear explanatory choice for a simgular covariate</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="travel-time-2" class="level5">
+<h5 class="anchored" data-anchor-id="travel-time-2">Travel Time</h5>
+<p>Participants expressed high degree of uncertainty, with selections split between Vernalis Flow (majority), OMR, and Null. Participants pointed out that statistical analyses show all three covariates have very weak, “flat,” or non-existent relationships with travel time in this region. The selections were thus made with low confidence, often defaulting to a choice made for the other metrics for the sake of consistency.</p>
+<section id="vernalis-flow-7" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-flow-7">Vernalis Flow</h6>
+<ul>
+<li><p>See previous responses for this region.</p></li>
+<li><p>Given the distance from both Varnalis and the pumps, I am not sure which covariate would have the best predictive capacity. Given 2011, I am assuming this would be the biggest player.</p></li>
+<li><p>I’m going to deviate a bit and say that Vernalis Flows are likely still influencing travel times in this region over OMR given that they stay in the corridor and don’t route into the interior delta which would be influenced by OMR.</p></li>
+<li><p>Pope et al.&nbsp;2025 - none of these covariates strongly associated with travel time. Migration time likely influenced by tidal flows.</p></li>
+<li><p>Higher Vernalis flows in this region should increase fish speed (decrease travel time). It is conceivable that higher vernalis flows would also be correlated with higher tributary inputs from the Calaveras and Mokelumne River, which combined would also increase fish speed (decrease travel time) in this region.</p></li>
+<li><p>Again I believe that tidal flows are likely the biggest covariate with travel time in this region. However, that is not an option to select.</p></li>
+<li><p>Same as above.</p></li>
+<li><p>Hydrodynamics are mostly driven by tides in this region. Although Vernalis inflow is expected to push the transition from mostly riverine to mostly tidal habitat further downstream, I think that transition point happens further upstream even in wet years. However, flow in this region may be affected by Sacramento River inflow (and Mokelumne); inasmuch as they are correlated with San Joaquin River inflow, it seems reasonable that Vernalis flow might affect travel time in this region. On the other hand, OMR reflects tides, so it is a possible second option. Pope et al.&nbsp;(2025) found similar weakly negative relationships for all three covariates, so I have low confidence in my response here.</p></li>
+</ul>
+</section>
+<section id="omr-6" class="level6">
+<h6 class="anchored" data-anchor-id="omr-6">OMR</h6>
+<ul>
+<li><p>Pope et al.&nbsp;(2025) reported that travel times were consistent across covariates, but OMR is preferable because it incorporates tide and export information</p></li>
+<li><p>Buchanan et al.&nbsp;(2021) in the discussion postulates that higher flows could result in shorter travel times. They also state that travel time was negatively associated with the tidal reach between Turner Cut and Chipps Island.</p></li>
+</ul>
+</section>
+<section id="null-2" class="level6">
+<h6 class="anchored" data-anchor-id="null-2">Null</h6>
+<ul>
+<li><p><strong>None of the 3 covariate options have a dominant effect on flow/velocity in this region. The relative effect of each covariate in this region depends on other factors. For instance, with some conditions when Jersey Point flow is negative, the traditional OMR (Old River at Bacon Island plus Middle River at Middle River USGS gages) may influence conditions in the most eastern section of this region (San Joquin River near the mouth of Old River upstream to Columbia Cut), but not likely effecting conditions west of Jersey Point. At other times, with high Vernalis flows, Vernalis might be a dominant covariate throughout this region. Since the dominance of each covariate varies, it does not seem approprate to select a single covariate in this region. Also, please note that the OMR used in the Pope et al (2025) paper uses a station about 10km further south than the typical Old River station. The new Pope et al (2025) OMR value may not have much relevance on the San Joaquin River north or west of Franks Tract, which makes up most of this region.</strong></p></li>
+<li><p><strong>No clear explanatory choice for a simgular covariate</strong></p></li>
+<li><p><strong>The effects of all variable in Pope et al.&nbsp;2025 are flat.</strong></p></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="region-4-old-and-middle-river-upstream-covariates" class="level2">
+<h2 class="anchored" data-anchor-id="region-4-old-and-middle-river-upstream-covariates">Region 4 (Old and Middle River, Upstream) Covariates</h2>
+<section id="covariate-selection-3" class="level3">
+<h3 class="anchored" data-anchor-id="covariate-selection-3">Covariate Selection</h3>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="steelhead-elicitation-r2_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table lightable-classic caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<caption>Covariates and Confidence for Region 4 by Metric. Prop refers to the proportion of people who selected each covariate and Med_conf is the median confidence for each selection.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">metric</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold;">covariate</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">prop</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold;">med_conf</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.31</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Survival</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.62</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Survival</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.06</td>
+<td style="text-align: right; border-bottom: 1px solid;">2.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.19</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Routing</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">Routing</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.00</td>
+<td style="text-align: right; border-bottom: 1px solid;">NA</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">CVP + SWP Exports</td>
+<td style="text-align: right;">0.12</td>
+<td style="text-align: right;">1.5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">Null</td>
+<td style="text-align: right;">0.06</td>
+<td style="text-align: right;">1.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TravelTime</td>
+<td style="text-align: left;">OMR</td>
+<td style="text-align: right;">0.81</td>
+<td style="text-align: right;">2.0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; border-bottom: 1px solid;">TravelTime</td>
+<td style="text-align: left; border-bottom: 1px solid;">Vernalis Flow</td>
+<td style="text-align: right; border-bottom: 1px solid;">0.00</td>
+<td style="text-align: right; border-bottom: 1px solid;">NA</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</section>
+<section id="explanations-3" class="level3">
+<h3 class="anchored" data-anchor-id="explanations-3">Explanations</h3>
+<section id="summary-3" class="level4">
+<h4 class="anchored" data-anchor-id="summary-3">Summary</h4>
+<p>Broad support that in this region, hydrodynamics and fish fate are overwhelmingly driven by the operations of the south Delta export facilities. Participants primarily chose either OMR flow or CVP + SWP Exports across all three metrics.</p>
+<hr>
+</section>
+<section id="rationales-3" class="level4">
+<h4 class="anchored" data-anchor-id="rationales-3">Rationales</h4>
+<section id="survival-3" class="level5">
+<h5 class="anchored" data-anchor-id="survival-3">Survival</h5>
+<p>Participant opinion was divided between OMR and CVP + SWP Exports, which reflects differences in rationale between a general conditions metric versus a direct cause. Some also posited that for fish, being entrained and subsequently trucked downstream via salvage operations may offer a higher probability of survival.</p>
+<section id="vernalis-1" class="level6">
+<h6 class="anchored" data-anchor-id="vernalis-1">Vernalis</h6>
+<ul>
+<li>OMR and exports have more of an influence on this region in comparison to other regions, however flow is going to have a larger impact.</li>
+</ul>
+</section>
+<section id="omr-7" class="level6">
+<h6 class="anchored" data-anchor-id="omr-7">OMR</h6>
+<ul>
+<li><p>OMR is calculated from channels within the center of Region 4, and is therefore most geographically relevant. That said, there is little reason to expected a tidally-averaged flow metric like OMR is perceived by or very relevant to steelhead smolts. Exports would probably be a better covariate if fish that were entrained vs.&nbsp;fish migrating volitionally were distinguished in the model.</p></li>
+<li><p>This region has the most complex interactions between exports and Delta inflow. Water diverted from the Sacramento River often flows through the interior Delta (e.g., region 4), causing reverse flows along the OMR corridor. Given the three covariates of choice and the complex interaction between Delta inflow (from both the Sacramento and San Joaquin Rivers) and exports, this seems like the most likely covariate to capture some of the dynamics influencing survival.</p></li>
+<li><p>I don’t think survival would be more sensitive to a more negative to more positive OMR per say, but would likely be more sensitive to big diurnal changes in OMR that acts to keep fish within this Upper OMR Corridor.</p></li>
+<li><p>OMR and exports have more of an influence on this region in comparison to other regions, however flow is going to have a larger impact.</p></li>
+<li><p>When juvenile salmonids are present in the Delta, higher numbers of juveniles salvaged are associated with more negative OMR flows</p></li>
+<li><p><strong>Since this includes both Vernalis and export effects. However, [participant] is concerned that the model seems to only model fish moving TO the facilities from Turner Cut – does that relationship mean that the model assumes that no fish can travel from Region 2, through Region 4, out to the western Delta?</strong></p>
+<ul>
+<li>Response:</li>
+</ul></li>
+<li><p>Pope et al.&nbsp;(2025) found a negative effect of OMR on survival in this region for steelhead, and a positive effect of exports. For Chinook, Buchanan &amp; Whitlock (2022) found a relationship between the magnitude (but not direction) of flow in the Old/Middle River corridor and survival from head of Old River to Chipps Island, but not for survival from head of Old River to Turner Cut or to the water export facilities, suggesting that the effect was for survival in the downstream regions (3 and 4 combined). Water flow in this region is affected by tides, exports, and Delta inflow from the Sacramento River with some effect of SJR flow (depending on DCC gate status and exports; Monsen et al.&nbsp;2007; Cavallo et al.&nbsp;2013). I am torn between OMR and exports for Region 4, but am going with OMR because it reflects both exports and tides.</p></li>
+<li><p>The analysis of this region in Pope et al.&nbsp;(2025) found a strong effect of OMR that was consistent across routes. OMR also incorporates both tidal and export informatio.</p></li>
+<li><p>I will admit this is the region I am least familiar with. Again, I waffled between OMR and exports. Pope et al.&nbsp;(2025) slightly nudged me towards OMR. It doesn’t appear flow or exports alone have as big an effect, but OMR in some case can be associated with survival in this region.</p></li>
+</ul>
+</section>
+<section id="cvp-swp-exports-3" class="level6">
+<h6 class="anchored" data-anchor-id="cvp-swp-exports-3">CVP + SWP Exports</h6>
+<ul>
+<li><p><strong>Fish in this region are moving upstream. None of the 3 covariates are strong predictors of transition probability (Pope et al). Of the 3 covariates, exports are the best predictor of transition probability. Further Pope et al (2025) Fig 9 shows that the survival probability for fish migrating through Turner Cut is strongly correlated to exports and Vernalis. I chose exports because there seems to be more scatter/uncertainty using hte Vernalis covariate at higher survivals.</strong></p></li>
+<li><p>Steelhead migrating through this reach would have avoided (bypassed) the salvage facilities or taken Turner Cut. Since I don’t believe many fish take Turner Cut, exports would be the strongest driver in this region, with higher exports leading to more fish being removed from this reach and transported downstream (potentially leading to higher survival?). If exports are low, more fish will continue through this reach and I’m guessing will experience lower survival compared to trucked fish. So higher exports = higher survival in this region (weird).</p></li>
+<li><p>Once fish are in region 4 they are most likely to survive if salvaged. Higher export rates should increase salvage.</p></li>
+<li><p>Similar to the previous answer, the spatial association and geographic proximity of the Export facilities are expected to exert a larger influence on nearby survival.</p></li>
+<li><p>These channels are closest to the export facilities and have the greatest opportunity to exert hydrodynamic effects on fish in these channels. The relationship in Pope et al.&nbsp;2005 is modest but so are the other two. Nothing stands out as being particularly strong</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="routing-3" class="level5">
+<h5 class="anchored" data-anchor-id="routing-3">Routing</h5>
+<p>For both metrics, OMR was the favored choice for most participants. The primary rationale is that OMR is the most geographically relevant measure and the best single metric for integrating the complex interplay of forces in the interior Delta. The selection of OMR was also cited as being better supported by the Pope et al.&nbsp;(2025) analysis. For those who selected Exports, they cited Export as the strongest causal factor influencing routing and travel time here.</p>
+<section id="omr-8" class="level6">
+<h6 class="anchored" data-anchor-id="omr-8">OMR</h6>
+<ul>
+<li><p>See previous response for this region.</p></li>
+<li><p>Routing here is going to be highly dependent on Vernalis flows, Sacramento River flows and exports. The region encompasses the pumping facilities and there is no disentangling Delta inflow and exports here. Therefore, it seems the most reasonable to assume OMR flows would be the best covariate at describing routing in this reach.</p></li>
+<li><p>Much like survival I think this may be more correlated to the OMR ‘cycles’ with larger swings in OMR ‘trapping’ fish within this region.</p></li>
+<li><p><strong>Routing in this region is likely driven by tidal flows and phasing (i.e., the phasing of the reversal of the tides at channel junctions). None of the covariates capture tides (althoug some of the rationales for round 1 stated that OMR captures tides, OMR is a daily value of tidally filtered flow (removing the tide) in this analysis). Nonetheless, I selected OMR for this region because it is spatially proximate (i.e., the 2 USGS flow gages used for OMR are within this region).</strong></p></li>
+<li><p>PTM simulations show the risk of entrainment increases considerably with increasing CVP and SWP exports, as represented by net OMR flows (NMFS 2009). Thus, the risk of juvenile salmonid entrainment into the south Delta channels is increased when OMR flows become more negative (NMFS 2009).</p></li>
+<li><p>Negative OMR flows (higher exports) will potentially draw steelhead into this region from the mainstem San Joaquin River</p></li>
+<li><p><strong>Since this includes both Vernalis and export effects. However, [participant] is concerned that the model seems to only model fish moving TO the facilities from Turner Cut – does that relationship mean that the model assumes that no fish can travel from Region 2, through Region 4, out to the western Delta?</strong></p>
+<ul>
+<li>Response:</li>
+</ul></li>
+<li><p>Exports are expected to draw fish toward the export facilities from the north (i.e., Region 4), however, Anchor QEA (2022) found that juvenile steelhead movements were associated with net flow and tidal flow, which are better represented by OMR than by exports. With the DCC gate closed, the interior Delta will have more water from the SJR (Monsen et al.&nbsp;2007), but with low flushing times reflecting a lack of directed water movement, so it seems unlikely that Vernalis flow will have a strong impact on routing in this region. Also, Buchanan (2024) found no effect of Vernalis flow (SJR inflow) on routing into Turner Cut, so it seems unlikely that it would affect routing within the interior Delta itself.</p></li>
+<li><p>OMR is a measure that incorporates tides and exports and the values defining the measure are especially relevant for this location.</p></li>
+<li><p>I am selecting this only because it combines exports and flows. I don’t know of any information on routing in this reach. However, generalized models suggest flow proportion at junctions as drivers (Cavallo et al.&nbsp;2015, Perry et al.&nbsp;2015)</p></li>
+</ul>
+</section>
+<section id="null-3" class="level6">
+<h6 class="anchored" data-anchor-id="null-3">Null</h6>
+<ul>
+<li>Fish follow the flow. I don’t think that any one of these covariates is more important in this reach. Buchanan 2024. Buchanan found that higher CVP exports were associated with fish being more likely to enter interior Delta, but this was not the case for SWP exports (Buchanan 2025 presentation).</li>
+</ul>
+</section>
+</section>
+<section id="cvp-swp-exports-4" class="level5">
+<h5 class="anchored" data-anchor-id="cvp-swp-exports-4">CVP + SWP Exports</h5>
+<ul>
+<li><p>Exports change the hydrodynamics in this region.</p></li>
+<li><p>Same as above.</p></li>
+<li><p>I’m again deferring to the results in Pope et al.&nbsp;(2025). The slight positive association with exports gave the nod to exports in this region.</p></li>
+</ul>
+</section>
+<section id="travel-time-3" class="level5">
+<h5 class="anchored" data-anchor-id="travel-time-3">Travel Time</h5>
+<p><em>See Routing section above for summary</em></p>
+<section id="omr-9" class="level6">
+<h6 class="anchored" data-anchor-id="omr-9">OMR</h6>
+<ul>
+<li><p>See previous responses for this region.</p></li>
+<li><p>This region has the most complex interactions between exports and Delta inflow. Water diverted from the Sacramento River often flows through the interior Delta (e.g., region 4), causing reverse flows along the OMR corridor. Given the three covariates of choice and the complex interaction between Delta inflow (from both the Sacramento and San Joaquin Rivers) and exports, this seems like the most likely covariate to capture some of the dynamics influencing travel time.</p></li>
+<li><p>I think travel time would be correlated to the size of the zone of influence (and probably the route which they entered this region) which is driven by OMR and the magnitude of changes in OMR with large fluctuations keeping fish in a ‘seiche’ and unable to escape this region.</p></li>
+<li><p>Pope et al.&nbsp;2025</p></li>
+<li><p>A negative OMR will decrease fish speed (increase travel time) in this region. A positive OMR would have the opposite effect (decrease travel time).</p></li>
+<li><p><strong>OMR – has both the strongest association and this covariate includes both Vernalis and export effects. However, [participant] is concerned that the model seems to only model fish moving TO the facilities from Turner Cut – does that relationship mean that the model assumes that no fish can travel from Region 2, through Region 4, out to the western Delta?</strong></p>
+<ul>
+<li>Response:</li>
+</ul></li>
+<li><p>Hydrodynamics in this region are associated with tides, Sacramento River inflow, DCC gate status, and exports (Monsen et al.&nbsp;2007), all of which are reflected by OMR. Pope et al.&nbsp;(2025) found a steeper relationship between OMR and travel time in this region than between Vernalis flow or exports.</p></li>
+<li><p>Pope et al.&nbsp;(2025) reported a strong effect for this covariate</p></li>
+<li><p>Figure 7 in Pope et al.&nbsp;(2025) and the associated text describe OMR as having the strongest association with travel times.</p></li>
+</ul>
+</section>
+<section id="cvp-swp-exports-5" class="level6">
+<h6 class="anchored" data-anchor-id="cvp-swp-exports-5">CVP + SWP Exports</h6>
+<ul>
+<li><p>Higher exports will move fish quicker to the salvage facilities.</p></li>
+<li><p>Same as above.</p></li>
+</ul>
+</section>
+<section id="null-4" class="level6">
+<h6 class="anchored" data-anchor-id="null-4">Null</h6>
+<ul>
+<li><strong>Wffects are uncertain in in Pope et al.&nbsp;2025. There appears to be uneven effect sizes depending on route within the region</strong></li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="additional-comments" class="level2">
+<h2 class="anchored" data-anchor-id="additional-comments">Additional Comments</h2>
+<ul>
+<li><p>It might be good to… [relay to] participants… how “OMR” is calculated for this analysis. As I understand it, OMR for this study is consistent with OMR in Pope et al (2025), which sums the USGS tidally filtered flow at Old River at Highway 4 and Middle River at Middle River. This is different from the definition of OMR for many other studies, which use the Old River at Bacon Island station instead of the Old River at Highway 4 station. The Old River station for this studey (at Highway 4) is about 10 km further south than the Old River station used for many other studies (at Bacon Island).</p></li>
+<li><p>Since the OMR value for this study is tidally filtered, it does not represent the tides (some rationale statements from round 1 said they chose OMR because it captures the tides).</p></li>
+<li><p>[Participant] selected covariates in the first round based on the best fit based on Pope et al 2025. This works well when estimating outcomes from day to day operations. However, since [participant] expects the south Delta STARS model to be used to compare operations scenarios which are likely to include different exports or OMRs, [participant] is concerned that modeling survival/routing/travel time based only on Vernalis or only on exports will allow for estimated outcomes that aren’t realistic. For example, because Vernalis and exports are positively correlated, survival is positive with exports. If the exports covariate is chosen, testing two scenarios with identical Vernalis flows but different exports will indicate that survival is higher under the higher export scenario, which might not be the case. So, for some regions/outcomes, [participant] changed our answer to use OMR since that is the covariate which is sensitive to both Vernalis AND exports..</p></li>
+</ul>
+<hr>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<p><a href="https://github.com/BDO-Science/steelhead-elicitation/tree/main/resources">Resources Folder</a></p>
+<ul>
+<li>A <a href="https://fishsciences.shinyapps.io/delta-hydrodynamics/">Shiny app</a> to see how exports, SJR inflows and OMR flows influence hydrodynamic conditions in each of these regions.
+<ul>
+<li>Accompanying graphics in DSM2 Hydro Simulations</li>
+</ul></li>
+<li>Anchor QEA 2022</li>
+<li>Attachment 6 LTO Salmon EA</li>
+<li>Buchanan 2024</li>
+<li>Buchanan steelhead routing presentation June 2025</li>
+<li>Buchanan et al.&nbsp;2021</li>
+<li>Buchanan and Skalski 2019</li>
+<li>Buchanan and Whitlock 2022</li>
+<li>Cavallo et al.&nbsp;2013</li>
+<li>Cavallo et al.&nbsp;2015</li>
+<li>Cramer report 2013</li>
+<li>Dodrill et al.&nbsp;2022</li>
+<li>Perry et al.&nbsp;2018</li>
+<li>Pope et al.&nbsp;2025</li>
+<li>USFWS South Delta Steelhead Survival Study Reports 2021, 2022, 2024</li>
+<li>Reclamation LTO FEIS Appendix I Old and Middle River Flow Management Attachment I.3 Delta Export Zone of Influence Analysis</li>
+<li>2024 CAMT Salmon Technical Working Group Final Report “a Review of Recent Science to Improve Our Understanding and Application of Life Cycle and Decision Support Models to Salmon Management in the South Delta”</li>
+<li>Wohner et al.&nbsp;2022</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
